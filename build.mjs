@@ -67,6 +67,7 @@ function nav(page) {
   <a class="brand" href="/"><span class="brand-mark">YD</span><span class="brand-name">${SITE}</span></a>
   <p class="status"><span class="dot"></span>Available for new projects · Limassol <time data-clock>--:--</time></p>
   <nav class="links" aria-label="Main">${l('/work/', 'Work', 'work')}${l('/about/', 'About', 'about')}<a href="#contact">Contact</a></nav>
+  <button class="inspect" role="switch" aria-checked="false" title="Inspect mode (⌘I)"><span class="switch" aria-hidden="true"><i></i></span>Inspect mode <kbd>⌘I</kbd></button>
   <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 </header>
 <div class="menu" id="menu" hidden>
@@ -265,8 +266,8 @@ function about() {
 </section>
 <section class="libraries dark">
   <div class="wrap">
-    <h2 class="h-lg">Enabled libraries<br><span class="muted">skills &amp; tools</span></h2>
-    <div class="libs">${libs.map(([n, items]) => `<div class="lib"><div class="lib-h"><b>${n}</b><span class="mono muted">${items.length} items</span></div><ul>${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div>
+    <h2 class="h-lg lib-title">Enabled libraries <em>skills &amp; tools</em></h2>
+    <div class="libs">${libs.map(([n, items]) => `<div class="lib"><div class="lib-h"><b>${n}</b><span class="mono muted">${items.length} items</span></div><ul>${items.map((x) => `<li><span>${esc(x)}</span><button class="switch" role="switch" aria-checked="true" aria-label="${esc(x)}"><i></i></button></li>`).join('')}</ul></div>`).join('')}</div>
   </div>
 </section>
 <section class="facts wrap">
@@ -282,7 +283,7 @@ function about() {
 function flowSVG(f, cls) {
   const s = [];
   s.push(`<svg class="flow ${cls}" viewBox="0 0 ${f.w} ${f.h}" role="img" aria-label="Visitor flow diagram">`);
-  s.push(`<rect width="${f.w}" height="${f.h}" fill="${f.bg || '#f7f7f7'}" rx="4"/>`);
+  s.push(`<rect width="${f.w}" height="${f.h}" fill="${f.bg || '#f7f7f7'}" rx="0"/>`);
   for (const [x, y, d, st, sw] of f.p) s.push(`<path d="${d}" transform="translate(${x} ${y})" fill="none" stroke="${st || '#111'}" stroke-width="${sw || 1.2}" stroke-linejoin="round"/>`);
   if (f.d) {
     const [x, y, w, h, st, fl] = f.d;
@@ -290,11 +291,11 @@ function flowSVG(f, cls) {
     s.push(`<foreignObject x="${x + w * 0.18}" y="${y}" width="${w * 0.64}" height="${h}"><div class="fo fo-d">${esc(f.dt ? f.dt[4] : '')}</div></foreignObject>`);
   }
   for (const [x, y, w, h, t, fl, st, tc] of f.n) {
-    s.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${fl}" stroke="${st}"/>`);
+    s.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="0" fill="${fl}" stroke="${st}"/>`);
     s.push(`<foreignObject x="${x}" y="${y}" width="${w}" height="${h}"><div class="fo" style="color:${tc}">${esc(t)}</div></foreignObject>`);
   }
   for (const [x, y, w, h, t] of f.l) {
-    s.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="#fff" stroke="#e5e5e5"/>`);
+    s.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="0" fill="#fff" stroke="#e5e5e5"/>`);
     s.push(`<text x="${x + w / 2}" y="${y + h / 2 + 3.5}" text-anchor="middle" class="fl">${esc(t)}</text>`);
   }
   s.push('</svg>');

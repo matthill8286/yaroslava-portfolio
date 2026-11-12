@@ -73,6 +73,32 @@
     });
   }
 
+  // Inspect mode
+  const ins = $('.inspect');
+  if (ins) {
+    let tip;
+    const set = (on) => {
+      ins.setAttribute('aria-checked', on); document.body.classList.toggle('inspecting', on);
+      try { sessionStorage.setItem('inspect', on ? '1' : ''); } catch {}
+      if (!on && tip) { tip.remove(); tip = null; }
+    };
+    ins.addEventListener('click', () => set(ins.getAttribute('aria-checked') !== 'true'));
+    addEventListener('keydown', (e) => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'i') { e.preventDefault(); set(ins.getAttribute('aria-checked') !== 'true'); } });
+    document.addEventListener('mousemove', (e) => {
+      if (!document.body.classList.contains('inspecting')) return;
+      const el = e.target.closest('main section, main figure, .row, .pc, .card, .persona, .lib');
+      if (!el) { if (tip) tip.hidden = true; return; }
+      tip = tip || document.body.appendChild(Object.assign(document.createElement('span'), { className: 'insp-tip' }));
+      const r = el.getBoundingClientRect(); tip.hidden = false;
+      tip.textContent = Math.round(r.width) + ' × ' + Math.round(r.height);
+      tip.style.left = (r.left + r.width / 2) + 'px'; tip.style.top = Math.max(16, r.top) + 'px';
+    });
+    try { if (sessionStorage.getItem('inspect')) set(true); } catch {}
+  }
+
+  // Library switches
+  $$('.switch').forEach((s) => s.addEventListener('click', () => s.setAttribute('aria-checked', s.getAttribute('aria-checked') !== 'true')));
+
   // Work filters
   const grid = $('[data-grid]');
   if (grid) {
