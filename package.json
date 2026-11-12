@@ -1,0 +1,1 @@
+{ "name": "yaroslava-portfolio", "private": true, "type": "module", "scripts": { "build": "node build.mjs", "dev": "node build.mjs && npx serve dist" } }

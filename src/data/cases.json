@@ -1,0 +1,2579 @@
+{
+ "inner-glow": {
+  "slug": "inner-glow",
+  "crumb": "Work / 01 — Inner Glow AI",
+  "eyebrow": "CASE 01 · PRODUCT DESIGN · MOBILE APP",
+  "title": "Inner Glow AI",
+  "intro": "A mental health app that turns daily check-ins into one score people can understand, and gives a next step for every result.",
+  "meta": [
+   [
+    "ROLE",
+    "Product Designer"
+   ],
+   [
+    "TYPE",
+    "Mobile app · iOS & Android"
+   ],
+   [
+    "TIMELINE",
+    "10 weeks · 2026"
+   ],
+   [
+    "SCOPE",
+    "UX · UI · Design system"
+   ],
+   [
+    "TOOLS",
+    "Figma · FigJam · Maze"
+   ],
+   [
+    "SIZE",
+    "200+ screens · 17 flows"
+   ]
+  ],
+  "heroLabel": [
+   "#  Key screens",
+   "375 × 812"
+  ],
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "name": "Problem",
+    "intro": "People who want to look after their mental health usually start strong and stop after a week. Mood trackers collect data but don't explain it, meditation apps don't know how you feel today, and therapy is expensive with long waiting lists. The result is a lot of logging and no clear answer to: am I getting better, and what should I do today?",
+    "text": "People who want to look after their mental health usually start strong and stop after a week. Mood trackers collect data but don't explain it, meditation apps don't know how you feel today, and therapy is expensive with long waiting lists. The result is a lot of logging and no clear answer to: am I getting better, and what should I do today?",
+    "hmw": "How might we help people understand their mental state in seconds and give them one small, useful action every day?"
+   },
+   "Research": {
+    "label": "02 — RESEARCH",
+    "name": "Research",
+    "stats": [
+     [
+      "8",
+      "Interviews, ages 22–40"
+     ],
+     [
+      "05",
+      "Apps reviewed"
+     ],
+     [
+      "06",
+      "Usability tests"
+     ],
+     [
+      "46",
+      "Survey answers"
+     ]
+    ],
+    "finding": "Main finding: people stopped because the app felt like homework, the charts didn’t tell them anything, and paid content appeared before any value."
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "name": "Audience",
+    "intro": "Who the site is for, what each group needs, and the page that answers it.",
+    "personas": [
+     {
+      "name": "Venue operators",
+      "texts": [
+       "SP",
+       "Stressed professionals",
+       "“I don’t have time for another app.”",
+       "NEEDS",
+       "A check-in that takes seconds, not minutes.",
+       "→ Check-in"
+      ]
+     },
+     {
+      "name": "Investors & developers",
+      "texts": [
+       "PS",
+       "Poor sleepers",
+       "“Why am I so tired all week?”",
+       "NEEDS",
+       "To see how sleep, mood and stress connect.",
+       "→ InnerGlow Score"
+      ]
+     },
+     {
+      "name": "Public sector clients",
+      "texts": [
+       "WT",
+       "Waiting for therapy",
+       "“I need something until I get help.”",
+       "NEEDS",
+       "Safe support and a clear route to a professional.",
+       "→ AI companion"
+      ]
+     }
+    ]
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "name": "Journey map",
+    "intro": "What a visitor does, thinks and struggles with at each step, and the design decision that answers it.",
+    "emotion": [
+     80,
+     60,
+     40,
+     40,
+     20
+    ],
+    "curveH": 120,
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "Notice",
+       "Start",
+       "Check in",
+       "Understand",
+       "Act"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Feels stressed or sleeps badly",
+       "Takes the assessment",
+       "Logs mood with one tap",
+       "Sees the InnerGlow Score",
+       "Picks a suggested action"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“I should look after myself.”",
+       "“Is this worth my time?”",
+       "“I don’t have energy for this.”",
+       "“Am I getting better?”",
+       "“What can I do today?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Five apps, none connected",
+       "Paywall before any value",
+       "Logging feels like homework",
+       "Charts don’t explain anything",
+       "Generic tips, no next step"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "Mood, sleep, stress and AI in one app",
+       "Value first, upgrade after real use",
+       "One-tap emoji check-in",
+       "One 0–100 score with a label",
+       "3–4 actions with time needed"
+      ]
+     }
+    ]
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "name": "Hypotheses",
+    "intro": "Eight hypotheses, each with its own metric, ordered by priority. Drawn as variants of one component: same structure, different bet.",
+    "items": [
+     [
+      "H1",
+      "One 0–100 score is easier to follow than separate mood, sleep and stress charts.",
+      "METRIC",
+      "Weekly opens of score history",
+      "High impact"
+     ],
+     [
+      "H2",
+      "A short assessment at the start makes the first result feel personal.",
+      "METRIC",
+      "Onboarding completion 80%+, day-2 return",
+      "High impact"
+     ],
+     [
+      "H3",
+      "3–4 suggested actions after each score turn logging into action.",
+      "METRIC",
+      "40%+ complete an action weekly",
+      "High impact"
+     ],
+     [
+      "H4",
+      "A one-tap emoji check-in keeps daily logging under 30 seconds.",
+      "METRIC",
+      "Check-in time, 7-day streak rate",
+      "High impact"
+     ],
+     [
+      "H5",
+      "Clear AI framing, with a route to a real professional, makes people trust the chat.",
+      "METRIC",
+      "Weekly chat use, support link taps",
+      "High impact"
+     ],
+     [
+      "H6",
+      "Smart reminders based on the user’s own patterns work better than fixed daily pings.",
+      "METRIC",
+      "Notification open rate, opt-out rate",
+      "Medium impact"
+     ],
+     [
+      "H7",
+      "Optional voice input helps people who find it hard to put feelings into words.",
+      "METRIC",
+      "Share of voice entries",
+      "Medium impact"
+     ],
+     [
+      "H8",
+      "Showing paid features after real use converts better than a paywall after onboarding.",
+      "METRIC",
+      "Trial start rate, day-7 retention",
+      "Medium impact"
+     ]
+    ],
+    "setLabel": "❖ Hypothesis"
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "name": "Prioritisation",
+    "intro": "Each hypothesis placed by expected impact and the effort to build it. The score went first even as a big bet: every other feature depends on it.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      560,
+      60
+     ],
+     [
+      "H2",
+      250,
+      200
+     ],
+     [
+      "H3",
+      640,
+      150
+     ],
+     [
+      "H4",
+      40,
+      48
+     ],
+     [
+      "H5",
+      120,
+      128
+     ],
+     [
+      "H6",
+      600,
+      330
+     ],
+     [
+      "H7",
+      700,
+      410
+     ],
+     [
+      "H8",
+      160,
+      330
+     ]
+    ]
+   },
+   "Visitor flow": {
+    "label": "07 — VISITOR FLOW",
+    "name": "Visitor flow",
+    "intro": "The daily loop and the support path. Both end with one next step: an action, an exercise or a link to a professional.",
+    "flowId": "96:601"
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "name": "Sitemap",
+    "intro": "Five tabs: Home, Practices, Journal and Profile, with Glow AI in the central button.",
+    "treeId": "96:645"
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "Low-fidelity layout first, agreed with the client, then the final interface.",
+    "wireId": "96:694",
+    "wireLabel": "#  Wireframe",
+    "ui": {
+     "label": [
+      "#  Final UI"
+     ],
+     "img": "96:717"
+    }
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "name": "Solution",
+    "images": [
+     [
+      "96:723",
+      0,
+      492,
+      620
+     ],
+     [
+      "96:724",
+      508,
+      492,
+      620
+     ]
+    ],
+    "pins": [
+     [
+      "1",
+      113,
+      163
+     ],
+     [
+      "2",
+      425,
+      169
+     ],
+     [
+      "3",
+      681,
+      212
+     ],
+     [
+      "4",
+      867,
+      326
+     ]
+    ],
+    "notes": [
+     [
+      "1",
+      "Assessment",
+      "14 questions, one per screen, with a progress counter and a skip option on sensitive topics."
+     ],
+     [
+      "2",
+      "InnerGlow Score",
+      "One number from 0 to 100 with a plain-language label, and a history of what changed."
+     ],
+     [
+      "3",
+      "AI suggestions",
+      "3–4 actions after each score — mindfulness, activity, social, professional support — with time needed."
+     ],
+     [
+      "4",
+      "Mood check-in",
+      "One tap with 5 emoji states and an optional note. 12 seconds on average in testing."
+     ],
+     [
+      "5",
+      "AI companion",
+      "Text and voice chat with clear limits. Support contacts always sit in the chat header."
+     ],
+     [
+      "6",
+      "Trade-off",
+      "A single score can feel reductive, so details stay one tap away and every score has a label in words."
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "name": "Screens",
+    "intro": "Key screens of the app.",
+    "shots": [
+     {
+      "label": [
+       "#  Onboarding",
+       "375 × 812"
+      ],
+      "img": "96:779",
+      "w": 1000
+     },
+     {
+      "label": [
+       "#  InnerGlow Score"
+      ],
+      "img": "96:784",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  AI companion"
+      ],
+      "img": "96:788",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Check-in"
+      ],
+      "img": "96:793",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Journal"
+      ],
+      "img": "96:797",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Sleep"
+      ],
+      "img": "96:801",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mindful hours"
+      ],
+      "img": "96:805",
+      "w": 238
+     }
+    ]
+   },
+   "What we measure": {
+    "label": "12 — WHAT WE MEASURE",
+    "name": "What we measure",
+    "intro": "Eight hypotheses across five stages of the journey. Targets were set before launch; the prototype test already gave a first signal for four of the five stages.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "TARGET",
+      "PROTOTYPE SIGNAL"
+     ],
+     [
+      "Activation",
+      "H2",
+      "Onboarding completion, day-2 return",
+      "80%+",
+      "6 of 6 finished onboarding"
+     ],
+     [
+      "Habit",
+      "H4",
+      "Check-in time, 7-day streak rate",
+      "Under 30 s",
+      "12 s on average"
+     ],
+     [
+      "Value",
+      "H1, H3",
+      "Weekly opens of score history; actions completed weekly",
+      "40%+ complete an action",
+      "5 of 6 called actions the most useful part"
+     ],
+     [
+      "Trust",
+      "H5",
+      "Weekly chat use, support link taps",
+      "Baseline after launch",
+      "2 of 6 missed support contacts CHANGED THE DESIGN Moved into the chat header"
+     ],
+     [
+      "Retention & revenue",
+      "H6, H7, H8",
+      "Notification opt-out, share of voice entries, trial start, day-7 retention",
+      "Baseline after launch",
+      "After launch"
+     ]
+    ]
+   },
+   "Results": {
+    "label": "13 — RESULTS",
+    "name": "Results",
+    "cols": [
+     [
+      "Tested as a prototype",
+      "Moderated sessions with 6 people on Maze. 6 of 6 finished onboarding and understood their first score without help. The mood check-in took 12 seconds on average, and 5 of 6 said the suggested actions were the most useful part. Two people missed the support contacts, so they moved into the chat header."
+     ],
+     [
+      "What I would do next",
+      "In mental health products, tone matters as much as layout: “difficult day” instead of “negative” changed how people read the same chart. Next: test a shorter 5-question assessment, then track day-2 and day-7 retention and weekly suggested actions."
+     ]
+    ]
+   }
+  },
+  "next": [
+   "NEXT CASE — 02",
+   "JBC",
+   "Projects →"
+  ],
+  "heroImg": "96:364"
+ },
+ "jbc": {
+  "slug": "jbc",
+  "crumb": "Work / 02 — JBC Projects",
+  "eyebrow": "CASE 02 · UI/UX & DIGITAL PRODUCT DESIGN",
+  "title": "JBC Projects",
+  "intro": "A website that answers one question for venue owners: has this firm delivered a project like mine?",
+  "meta": [
+   [
+    "ROLE",
+    "UI/UX Designer"
+   ],
+   [
+    "TEAM",
+    "Absolute Websites"
+   ],
+   [
+    "TIMELINE",
+    "4 weeks · 2026"
+   ],
+   [
+    "SCOPE",
+    "UX · IA · UI · Responsive"
+   ],
+   [
+    "TOOLS",
+    "Figma · FigJam"
+   ],
+   [
+    "LIVE",
+    "jbcprojects.com ↗"
+   ]
+  ],
+  "heroLabel": [
+   "#  Home — Desktop",
+   "1440 × 900"
+  ],
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "name": "Problem",
+    "intro": "JBC's clients are venue owners, operators and investors planning large, long-term projects. Before they get in touch, they check one thing: has this firm delivered a project like mine? The firm's experience was not presented in one clear place, so the answer was hard to find.",
+    "text": "JBC's clients are venue owners, operators and investors planning large, long-term projects. Before they get in touch, they check one thing: has this firm delivered a project like mine? The firm's experience was not presented in one clear place, so the answer was hard to find.",
+    "hmw": "How might we help visitors confirm JBC’s experience in one visit and make contacting the firm the obvious next step?"
+   },
+   "Research": {
+    "label": "02 — RESEARCH",
+    "name": "Research",
+    "stats": [
+     [
+      "08",
+      "Venue projects audited"
+     ],
+     [
+      "04",
+      "Consultancies reviewed"
+     ],
+     [
+      "03",
+      "Audience groups defined"
+     ],
+     [
+      "05",
+      "Journey stages mapped"
+     ]
+    ],
+    "finding": "Main finding: clients choose a venue consultant on its past projects and clients first. The service list comes second."
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "name": "Audience",
+    "intro": "Who the site is for, what each group needs, and the page that answers it.",
+    "personas": [
+     {
+      "name": "Venue operators",
+      "texts": [
+       "VO",
+       "Venue operators",
+       "“Have they worked on an arena like ours?”",
+       "NEEDS",
+       "Proof the firm understands how venues run day to day.",
+       "→ Projects"
+      ]
+     },
+     {
+      "name": "Investors & developers",
+      "texts": [
+       "I&",
+       "Investors & developers",
+       "“Can they keep a project this size on track?”",
+       "NEEDS",
+       "Confidence that budget and timeline stay under control.",
+       "→ Services"
+      ]
+     },
+     {
+      "name": "Public sector clients",
+      "texts": [
+       "PS",
+       "Public sector clients",
+       "“Is this a safe choice to put forward?”",
+       "NEEDS",
+       "An established supplier with recognisable clients.",
+       "→ About"
+      ]
+     }
+    ]
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "name": "Journey map",
+    "intro": "What a visitor does, thinks and struggles with at each step, and the design decision that answers it.",
+    "emotion": [
+     80,
+     60,
+     40,
+     40,
+     20
+    ],
+    "curveH": 120,
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "Find",
+       "Scan",
+       "Check proof",
+       "Decide",
+       "Contact"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Gets a referral or searches",
+       "Reads the homepage",
+       "Browses projects",
+       "Opens a project page",
+       "Sends an enquiry"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“Who else has done this?”",
+       "“Do they work on venues like mine?”",
+       "“Have they delivered at this scale?”",
+       "“Is this the right team?”",
+       "“How fast can we talk?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Experience not visible at first glance",
+       "Services and projects mixed together",
+       "Projects hard to find",
+       "No next step after reading",
+       "Unclear what happens after getting in touch"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "Client logos in the hero",
+       "Three clear service cards",
+       "Project grid on the homepage",
+       "“Let’s talk” after key sections",
+       "Short form with FAQ, email in the footer"
+      ]
+     }
+    ]
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "name": "Hypotheses",
+    "intro": "Five hypotheses, each with its own metric. Drawn as variants of one component: same structure, different bet.",
+    "items": [
+     [
+      "H1",
+      "Client logos in the hero build trust faster.",
+      "METRIC",
+      "Share of visitors who scroll to Projects",
+      "High impact"
+     ],
+     [
+      "H2",
+      "Projects on the homepage help visitors find relevant experience.",
+      "METRIC",
+      "Project card clicks per session",
+      "High impact"
+     ],
+     [
+      "H3",
+      "Three clearly separated services help buyers find the right one.",
+      "METRIC",
+      "Service page views",
+      "Medium impact"
+     ],
+     [
+      "H4",
+      "A repeated “Let’s talk” call to action increases enquiries.",
+      "METRIC",
+      "Contact clicks per 100 visits",
+      "High impact"
+     ],
+     [
+      "H5",
+      "A short enquiry form with answers to common questions lowers the effort to get in touch.",
+      "METRIC",
+      "Form submissions per contact page visit",
+      "Medium impact"
+     ]
+    ],
+    "setLabel": "❖ Hypothesis"
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "name": "Prioritisation",
+    "intro": "Each hypothesis placed by expected impact and the effort to build it. Client logos and the repeated call to action went first; projects on the homepage were a big bet, as every venue needed photos and copy.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      120,
+      136
+     ],
+     [
+      "H2",
+      560,
+      96
+     ],
+     [
+      "H3",
+      50,
+      330
+     ],
+     [
+      "H4",
+      40,
+      56
+     ],
+     [
+      "H5",
+      230,
+      410
+     ]
+    ]
+   },
+   "Visitor flow": {
+    "label": "07 — VISITOR FLOW",
+    "name": "Visitor flow",
+    "intro": "The main paths through the site, including where visitors split.",
+    "flowId": "63:395"
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "name": "Sitemap",
+    "intro": "Information architecture agreed with the client before wireframes.",
+    "treeId": "63:439"
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "Low-fidelity layout first, agreed with the client, then the final interface.",
+    "wireId": "63:488",
+    "wireLabel": "#  Wireframe",
+    "ui": {
+     "label": [
+      "#  Final UI"
+     ],
+     "img": "63:511"
+    }
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "name": "Solution",
+    "images": [
+     [
+      "9:211",
+      0,
+      492,
+      620
+     ],
+     [
+      "9:212",
+      508,
+      492,
+      620
+     ]
+    ],
+    "pins": [
+     [
+      "1",
+      30,
+      315
+     ],
+     [
+      "2",
+      30,
+      370
+     ],
+     [
+      "3",
+      533,
+      113
+     ],
+     [
+      "4",
+      635,
+      425
+     ]
+    ],
+    "notes": [
+     [
+      "1",
+      "Hero with client logos",
+      "Tagline, two calls to action and a logo strip, so visitors see recognisable clients first."
+     ],
+     [
+      "2",
+      "Services overview",
+      "A one-line intro, then Strategic Advisory, Owner’s Representative and Project Management as a clear list."
+     ],
+     [
+      "3",
+      "Projects on the homepage",
+      "A slider of six venues, each with a large photo and the venue name."
+     ],
+     [
+      "4",
+      "Closing call to action",
+      "“Got a project in mind? Let’s talk.” at the end of every key page."
+     ],
+     [
+      "5",
+      "Footer as navigation",
+      "Services, featured projects and a direct email."
+     ],
+     [
+      "6",
+      "Trade-off",
+      "A form gives structured enquiries; the direct email stays in the footer for senior buyers who prefer to write."
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "name": "Screens",
+    "intro": "Key screens on desktop and mobile.",
+    "shots": [
+     {
+      "label": [
+       "#  Home — Desktop",
+       "1440 × 900"
+      ],
+      "img": "63:521",
+      "w": 1000
+     },
+     {
+      "label": [
+       "#  Services — Desktop"
+      ],
+      "img": "63:526",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Project page — Desktop"
+      ],
+      "img": "63:530",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Mobile — Home"
+      ],
+      "img": "63:535",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Services"
+      ],
+      "img": "63:539",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Project page"
+      ],
+      "img": "63:543",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — About"
+      ],
+      "img": "63:547",
+      "w": 238
+     }
+    ]
+   },
+   "What we measure": {
+    "label": "12 — WHAT WE MEASURE",
+    "name": "What we measure",
+    "intro": "Each hypothesis is tied to one event on the live site. Targets are set once the first month of data gives a baseline.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "HOW IT’S TRACKED",
+      "TARGET"
+     ],
+     [
+      "Trust",
+      "H1",
+      "Share of visitors who scroll to Projects",
+      "Scroll-depth event on the homepage",
+      "Baseline after launch"
+     ],
+     [
+      "Proof",
+      "H2",
+      "Project card clicks per session",
+      "Click event on project cards",
+      "Baseline after launch"
+     ],
+     [
+      "Orientation",
+      "H3",
+      "Service page views",
+      "Page views on the three service pages",
+      "Baseline after launch"
+     ],
+     [
+      "Conversion",
+      "H4",
+      "Contact clicks per 100 visits",
+      "Clicks on “Let’s talk” and Contact us",
+      "Baseline after launch"
+     ],
+     [
+      "Conversion",
+      "H5",
+      "Form submissions per contact page visit",
+      "Form submit event on Contact",
+      "Baseline after launch"
+     ]
+    ]
+   },
+   "Results": {
+    "label": "13 — RESULTS",
+    "name": "Results",
+    "cols": [
+     [
+      "Validated before build",
+      "Reviewed with the client at wireframe stage and with the agency before development, then checked on desktop, tablet and mobile. After launch, contact clicks, project page views and mobile bounce rate are tracked — each linked to one hypothesis."
+     ],
+     [
+      "What I would do next",
+      "For B2B services, clear project information matters more than visual effects. Next: filter projects by venue type, add capacity and opening year to project cards, and add a project-stage field to the enquiry form."
+     ]
+    ]
+   }
+  },
+  "next": [
+   "NEXT CASE — 03",
+   "Andreas Dalitis",
+   "& Sons →"
+  ],
+  "heroImg": "9:90"
+ },
+ "dalitis": {
+  "slug": "dalitis",
+  "crumb": "Work / 03 — Andreas Dalitis & Sons",
+  "eyebrow": "CASE 03 · UI/UX & DIGITAL PRODUCT DESIGN",
+  "title": "Andreas Dalitis & Sons",
+  "intro": "One website for three audiences: homebuyers, investors and businesses — and a reason to trust a new development.",
+  "meta": [
+   [
+    "ROLE",
+    "UI/UX Designer"
+   ],
+   [
+    "TEAM",
+    "Absolute Websites"
+   ],
+   [
+    "TIMELINE",
+    "4 weeks · 2026"
+   ],
+   [
+    "SCOPE",
+    "UX · IA · UI · Responsive"
+   ],
+   [
+    "TOOLS",
+    "Figma · FigJam"
+   ],
+   [
+    "LIVE",
+    "andreasdalitis.com.cy ↗"
+   ]
+  ],
+  "heroLabel": [
+   "#  Home — Desktop",
+   "1440 × 900"
+  ],
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "name": "Problem",
+    "intro": "The audience is wide: homebuyers, investors and businesses looking for commercial space. A buyer wants to see what is for sale now, an investor wants proof of past projects, a business wants to know if the company can build for them. The site had to answer all three without clutter.",
+    "text": "The audience is wide: homebuyers, investors and businesses looking for commercial space. A buyer wants to see what is for sale now, an investor wants proof of past projects, a business wants to know if the company can build for them. The site had to answer all three without clutter.",
+    "hmw": "How might we help each visitor find what is relevant to them quickly, and turn interest in a development into an enquiry?"
+   },
+   "Research": {
+    "label": "02 — RESEARCH",
+    "name": "Research",
+    "stats": [
+     [
+      "04",
+      "Cyprus developers reviewed"
+     ],
+     [
+      "03",
+      "Audience groups defined"
+     ],
+     [
+      "05",
+      "Journey stages mapped"
+     ],
+     [
+      "07",
+      "Services restructured"
+     ]
+    ],
+    "finding": "Main finding: visitors look for a specific development first and read about the company second. Trust comes from finished buildings, not long text."
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "name": "Audience",
+    "intro": "Who the site is for, what each group needs, and the page that answers it.",
+    "personas": [
+     {
+      "name": "Homebuyers",
+      "texts": [
+       "H",
+       "Homebuyers",
+       "“What can I buy now, and where?”",
+       "NEEDS",
+       "Available homes, locations and a quick way to ask.",
+       "→ For sale"
+      ]
+     },
+     {
+      "name": "Investors",
+      "texts": [
+       "I",
+       "Investors",
+       "“Have their buildings held value?”",
+       "NEEDS",
+       "Track record and long-term value.",
+       "→ Completed projects"
+      ]
+     },
+     {
+      "name": "Businesses",
+      "texts": [
+       "B",
+       "Businesses",
+       "“Can they build what we need?”",
+       "NEEDS",
+       "Experience with commercial buildings.",
+       "→ Services"
+      ]
+     }
+    ]
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "name": "Journey map",
+    "intro": "What a visitor does, thinks and struggles with at each step, and the design decision that answers it.",
+    "emotion": [
+     60,
+     40,
+     40,
+     60,
+     20
+    ],
+    "curveH": 120,
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "Arrive",
+       "Find",
+       "Trust",
+       "Compare",
+       "Enquire"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Lands on the homepage",
+       "Looks for what is on sale",
+       "Checks finished buildings",
+       "Reads services or a project",
+       "Fills in the form"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“Is this a serious developer?”",
+       "“What is available now?”",
+       "“Do they finish what they start?”",
+       "“Is this right for me?”",
+       "“Will the right person reply?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Long company text before any project",
+       "Developments buried in menus",
+       "No proof of past quality",
+       "Seven services in long paragraphs",
+       "Generic form, slow replies"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "Facts bar: since 1983, family-led",
+       "“Now Selling” right after the hero",
+       "Completed projects on the homepage",
+       "Services slider: title and one-line summary first",
+       "“Project type” field for sales"
+      ]
+     }
+    ]
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "name": "Hypotheses",
+    "intro": "Five hypotheses, each with its own metric. Drawn as variants of one component: same structure, different bet.",
+    "items": [
+     [
+      "H1",
+      "The development for sale right after the hero brings more buyers to its page.",
+      "METRIC",
+      "Clicks on “View Project”",
+      "High impact"
+     ],
+     [
+      "H2",
+      "Completed projects on the homepage build trust in new developments.",
+      "METRIC",
+      "Views of completed project pages",
+      "High impact"
+     ],
+     [
+      "H3",
+      "Key facts in short form make 40 years of experience clear at a glance.",
+      "METRIC",
+      "Scroll depth past the stats bar",
+      "Medium impact"
+     ],
+     [
+      "H4",
+      "An “Enquire Now” button in the header increases enquiries from any page.",
+      "METRIC",
+      "Enquiries per 100 visits",
+      "High impact"
+     ],
+     [
+      "H5",
+      "A “Project type” field helps the sales team reply faster.",
+      "METRIC",
+      "Share of enquiries with a project type",
+      "Medium impact"
+     ]
+    ],
+    "setLabel": "❖ Hypothesis"
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "name": "Prioritisation",
+    "intro": "Each hypothesis placed by expected impact and the effort to build it. The development for sale and the Enquire Now button went first; completed projects were a big bet, as each needed its own page.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      40,
+      56
+     ],
+     [
+      "H2",
+      560,
+      96
+     ],
+     [
+      "H3",
+      50,
+      330
+     ],
+     [
+      "H4",
+      120,
+      136
+     ],
+     [
+      "H5",
+      230,
+      410
+     ]
+    ]
+   },
+   "Visitor flow": {
+    "label": "07 — VISITOR FLOW",
+    "name": "Visitor flow",
+    "intro": "The main paths through the site, including where visitors split.",
+    "flowId": "63:743"
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "name": "Sitemap",
+    "intro": "Information architecture agreed with the client before wireframes.",
+    "treeId": "63:791"
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "Low-fidelity layout first, agreed with the client, then the final interface.",
+    "wireId": "63:834",
+    "wireLabel": "#  Wireframe",
+    "ui": {
+     "label": [
+      "#  Final UI"
+     ],
+     "img": "63:857"
+    }
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "name": "Solution",
+    "images": [
+     [
+      "15:698",
+      0,
+      492,
+      620
+     ],
+     [
+      "15:699",
+      508,
+      492,
+      620
+     ]
+    ],
+    "pins": [
+     [
+      "1",
+      30,
+      400
+     ],
+     [
+      "2",
+      30,
+      490
+     ],
+     [
+      "3",
+      533,
+      90
+     ],
+     [
+      "4",
+      533,
+      307
+     ]
+    ],
+    "notes": [
+     [
+      "1",
+      "Hero & stats bar",
+      "“Building with integrity since 1983” plus short facts instead of a paragraph."
+     ],
+     [
+      "2",
+      "Now Selling",
+      "Anotera Central right after the intro, with a direct link to the project."
+     ],
+     [
+      "3",
+      "Completed projects",
+      "Lefkothea Park and Lefkothea Residence as proof of finished work."
+     ],
+     [
+      "4",
+      "Services slider",
+      "Seven services shown one at a time: a title, a one-line summary and a photo, with a 01/07 counter."
+     ],
+     [
+      "5",
+      "Enquiry form",
+      "Name, email, phone, project type and message, with direct contacts, a map and answers to common questions."
+     ],
+     [
+      "6",
+      "Trade-off",
+      "One featured development keeps focus; all others live on the Projects page."
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "name": "Screens",
+    "intro": "Key screens on desktop and mobile.",
+    "shots": [
+     {
+      "label": [
+       "#  Home — Desktop",
+       "1440 × 900"
+      ],
+      "img": "63:867",
+      "w": 1000
+     },
+     {
+      "label": [
+       "#  Projects — Desktop"
+      ],
+      "img": "63:872",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Project page — Desktop"
+      ],
+      "img": "63:876",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Mobile — Home"
+      ],
+      "img": "63:881",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — For sale"
+      ],
+      "img": "63:885",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Project page"
+      ],
+      "img": "63:889",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Enquiry form"
+      ],
+      "img": "63:893",
+      "w": 238
+     }
+    ]
+   },
+   "What we measure": {
+    "label": "12 — WHAT WE MEASURE",
+    "name": "What we measure",
+    "intro": "Each hypothesis is tied to one event on the live site. Targets are set once the first month of data gives a baseline.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "HOW IT’S TRACKED",
+      "TARGET"
+     ],
+     [
+      "Find",
+      "H1",
+      "Clicks on “View Project” for the development for sale",
+      "Click event on the Now Selling card",
+      "Baseline after launch"
+     ],
+     [
+      "Trust",
+      "H2",
+      "Views of completed project pages",
+      "Page views on Lefkothea Park and Residence",
+      "Baseline after launch"
+     ],
+     [
+      "Trust",
+      "H3",
+      "Scroll depth past the stats bar",
+      "Scroll-depth event on the homepage",
+      "Baseline after launch"
+     ],
+     [
+      "Enquire",
+      "H4",
+      "Enquiries per 100 visits",
+      "Clicks on Enquire Now and form submits",
+      "Baseline after launch"
+     ],
+     [
+      "Enquire",
+      "H5",
+      "Share of enquiries with a project type",
+      "Project type value on each submission",
+      "Baseline after launch"
+     ]
+    ]
+   },
+   "Results": {
+    "label": "13 — RESULTS",
+    "name": "Results",
+    "cols": [
+     [
+      "Validated before build",
+      "Reviewed with the client at wireframe stage and with the agency before development, then checked on desktop, tablet and mobile. After launch, clicks on developments for sale, enquiries per visit and the share of enquiries with a project type are tracked."
+     ],
+     [
+      "What I would do next",
+      "When one site serves buyers, investors and businesses, the order of sections matters more than the number of pages. Next: filters by property type and location, availability and price ranges, Greek and Russian versions."
+     ]
+    ]
+   }
+  },
+  "next": [
+   "NEXT CASE — 04",
+   "Thallo",
+   "Building →"
+  ],
+  "heroImg": "15:584"
+ },
+ "thallo": {
+  "slug": "thallo",
+  "crumb": "Work / 04 — Thallo Building",
+  "eyebrow": "CASE 04 · UI/UX & DIGITAL PRODUCT DESIGN",
+  "title": "Thallo Building",
+  "intro": "Selling 2,068 m² of green office space in Larnaca before the building exists.",
+  "meta": [
+   [
+    "ROLE",
+    "UI/UX Designer"
+   ],
+   [
+    "TEAM",
+    "Absolute Websites"
+   ],
+   [
+    "TIMELINE",
+    "3 weeks · 2026"
+   ],
+   [
+    "SCOPE",
+    "UX · IA · UI · Responsive"
+   ],
+   [
+    "TOOLS",
+    "Figma · FigJam"
+   ],
+   [
+    "LIVE",
+    "thallobuilding.com ↗"
+   ]
+  ],
+  "heroLabel": [
+   "#  Home — Desktop",
+   "1440 × 900"
+  ],
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "name": "Problem",
+    "intro": "Thallo is still under construction, so there is no finished building to show. Companies looking for an office need to picture the space, understand what they can rent and decide if it is worth a viewing — all from renders and plans.",
+    "text": "Thallo is still under construction, so there is no finished building to show. Companies looking for an office need to picture the space, understand what they can rent and decide if it is worth a viewing — all from renders and plans.",
+    "hmw": "How might we help a company understand the building and the available space in one visit, and make booking a viewing the natural next step?"
+   },
+   "Research": {
+    "label": "02 — RESEARCH",
+    "name": "Research",
+    "stats": [
+     [
+      "04",
+      "Office developments reviewed"
+     ],
+     [
+      "03",
+      "Audience groups defined"
+     ],
+     [
+      "05",
+      "Journey stages mapped"
+     ],
+     [
+      "09",
+      "Floor areas specified"
+     ]
+    ],
+    "finding": "Main finding: companies choosing an office look for hard facts first — size, location, features, completion date. Clear numbers beat lifestyle text."
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "name": "Audience",
+    "intro": "Who the site is for, what each group needs, and the page that answers it.",
+    "personas": [
+     {
+      "name": "Growing companies",
+      "texts": [
+       "GC",
+       "Growing companies",
+       "“Is there a floor that fits our team?”",
+       "NEEDS",
+       "Flexible floors they can grow into.",
+       "→ Floor specs"
+      ]
+     },
+     {
+      "name": "Regional HQs",
+      "texts": [
+       "RH",
+       "Regional HQs",
+       "“Can we take all of it?”",
+       "NEEDS",
+       "The whole building under one lease.",
+       "→ FAQs"
+      ]
+     },
+     {
+      "name": "Office managers",
+      "texts": [
+       "OM",
+       "Office managers",
+       "“How will it work day to day?”",
+       "NEEDS",
+       "Parking, EV charging, climate control.",
+       "→ Features"
+      ]
+     }
+    ]
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "name": "Journey map",
+    "intro": "What a visitor does, thinks and struggles with at each step, and the design decision that answers it.",
+    "emotion": [
+     80,
+     60,
+     40,
+     40,
+     20
+    ],
+    "curveH": 120,
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "Discover",
+       "Understand",
+       "Picture it",
+       "Compare",
+       "Book"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Sees a listing or ad",
+       "Scrolls the page",
+       "Looks at renders",
+       "Checks floors and features",
+       "Requests a viewing"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“What is Thallo?”",
+       "“Why this building?”",
+       "“What will it feel like?”",
+       "“Which floor fits us?”",
+       "“Can we see it soon?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Nothing finished to visit",
+       "Lifestyle text instead of facts",
+       "Hard to imagine from plans",
+       "Areas spread across PDFs",
+       "Long contact forms"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "Clear headline and render",
+       "Key facts row with numbers",
+       "Interior renders in Highlights",
+       "Floor tabs: indoor, outdoor, total",
+       "Four-field form behind Book a Meeting"
+      ]
+     }
+    ]
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "name": "Hypotheses",
+    "intro": "Five hypotheses, each with its own metric. Drawn as variants of one component: same structure, different bet.",
+    "items": [
+     [
+      "H1",
+      "“Premium Offices in Larnaca” with a “Book a Meeting” button explains the offer in one screen.",
+      "METRIC",
+      "Scroll depth and hero clicks",
+      "High impact"
+     ],
+     [
+      "H2",
+      "Six feature cards are easier to scan than long text.",
+      "METRIC",
+      "Time on the features section",
+      "Medium impact"
+     ],
+     [
+      "H3",
+      "Floor tabs with indoor, outdoor and total area help companies find the right space.",
+      "METRIC",
+      "Floor tab clicks, then meeting requests",
+      "High impact"
+     ],
+     [
+      "H4",
+      "An FAQ answers common questions and reduces simple enquiries.",
+      "METRIC",
+      "FAQ opens, repeated questions",
+      "Medium impact"
+     ],
+     [
+      "H5",
+      "A four-field form increases viewing requests.",
+      "METRIC",
+      "Form submissions per 100 visits",
+      "High impact"
+     ]
+    ],
+    "setLabel": "❖ Hypothesis"
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "name": "Prioritisation",
+    "intro": "Each hypothesis placed by expected impact and the effort to build it. The headline with Book a Meeting and the short form went first; floor tabs were a big bet, as every floor needed checked areas.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      40,
+      56
+     ],
+     [
+      "H2",
+      50,
+      330
+     ],
+     [
+      "H3",
+      560,
+      96
+     ],
+     [
+      "H4",
+      230,
+      410
+     ],
+     [
+      "H5",
+      120,
+      136
+     ]
+    ]
+   },
+   "Visitor flow": {
+    "label": "07 — VISITOR FLOW",
+    "name": "Visitor flow",
+    "intro": "The main paths through the site, including where visitors split.",
+    "flowId": "63:1089"
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "name": "Sitemap",
+    "intro": "Information architecture agreed with the client before wireframes.",
+    "treeId": "63:1131"
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "Low-fidelity layout first, agreed with the client, then the final interface.",
+    "wireId": "63:1171",
+    "wireLabel": "#  Wireframe",
+    "ui": {
+     "label": [
+      "#  Final UI"
+     ],
+     "img": "63:1194"
+    }
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "name": "Solution",
+    "images": [
+     [
+      "15:914",
+      0,
+      492,
+      620
+     ],
+     [
+      "15:915",
+      508,
+      492,
+      620
+     ]
+    ],
+    "pins": [
+     [
+      "1",
+      45,
+      115
+     ],
+     [
+      "2",
+      45,
+      307
+     ],
+     [
+      "3",
+      553,
+      125
+     ],
+     [
+      "4",
+      45,
+      375
+     ]
+    ],
+    "notes": [
+     [
+      "1",
+      "One-page structure",
+      "The site has one job — viewing requests — so everything sits on one page."
+     ],
+     [
+      "2",
+      "Key facts row",
+      "Floors, completion, green features and access as short numbers."
+     ],
+     [
+      "3",
+      "Project highlights",
+      "Three stories with interior renders: premium offices, eco working and raised ceilings."
+     ],
+     [
+      "4",
+      "Six feature cards",
+      "Smart building, solar, raised floors, efficient HVAC, EV charging, architecture."
+     ],
+     [
+      "5",
+      "Floor specs",
+      "Nine floor tabs, each with indoor, outdoor and total area."
+     ],
+     [
+      "6",
+      "Trade-off",
+      "One long page keeps the path short but needs clear section titles."
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "name": "Screens",
+    "intro": "Key screens on desktop and mobile.",
+    "shots": [
+     {
+      "label": [
+       "#  Home — Desktop",
+       "1440 × 900"
+      ],
+      "img": "63:1204",
+      "w": 1000
+     },
+     {
+      "label": [
+       "#  Features — Desktop"
+      ],
+      "img": "63:1209",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Floor specs — Desktop"
+      ],
+      "img": "63:1213",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Mobile — Home"
+      ],
+      "img": "63:1218",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Key facts"
+      ],
+      "img": "63:1222",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Floor specs"
+      ],
+      "img": "63:1226",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — FAQ"
+      ],
+      "img": "63:1230",
+      "w": 238
+     }
+    ]
+   },
+   "What we measure": {
+    "label": "12 — WHAT WE MEASURE",
+    "name": "What we measure",
+    "intro": "Each hypothesis is tied to one event on the live site. Targets are set once the first month of data gives a baseline.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "HOW IT’S TRACKED",
+      "TARGET"
+     ],
+     [
+      "Understand",
+      "H1",
+      "Hero clicks and scroll depth",
+      "Click on Book a Meeting, scroll-depth event",
+      "Baseline after launch"
+     ],
+     [
+      "Explore",
+      "H2",
+      "Time on the features section",
+      "Time-in-view on the six feature cards",
+      "Baseline after launch"
+     ],
+     [
+      "Compare",
+      "H3",
+      "Floor tab clicks, then meeting requests",
+      "Click event on each floor tab",
+      "Baseline after launch"
+     ],
+     [
+      "Decide",
+      "H4",
+      "FAQ opens, repeated questions",
+      "Open event per question; questions in enquiries",
+      "Baseline after launch"
+     ],
+     [
+      "Book",
+      "H5",
+      "Form submissions per 100 visits",
+      "Submit event on the viewing form",
+      "Baseline after launch"
+     ]
+    ]
+   },
+   "Results": {
+    "label": "13 — RESULTS",
+    "name": "Results",
+    "cols": [
+     [
+      "Validated before build",
+      "Reviewed with the client at wireframe stage and with the agency before development, then checked on desktop, tablet and mobile. After launch, hero clicks, floor tab clicks and form submissions are tracked."
+     ],
+     [
+      "What I would do next",
+      "When a building does not exist yet, clear numbers and good renders do most of the selling. Next: interactive floor plans, a construction progress section and a brochure download for an email."
+     ]
+    ]
+   }
+  },
+  "next": [
+   "NEXT CASE — 05",
+   "Pcela",
+   "Flower →"
+  ],
+  "heroImg": "15:793"
+ },
+ "pcela": {
+  "slug": "pcela",
+  "crumb": "Work / 05 — Pcela Flower",
+  "eyebrow": "CASE 05 · E‑COMMERCE · UI/UX DESIGN",
+  "title": "Pcela Flower",
+  "intro": "A flower shop where a gift for someone else is ordered on a phone in a few minutes.",
+  "meta": [
+   [
+    "ROLE",
+    "UI/UX Designer"
+   ],
+   [
+    "CLIENT",
+    "Pcela Flower"
+   ],
+   [
+    "TIMELINE",
+    "4 weeks · 2025"
+   ],
+   [
+    "SCOPE",
+    "UX · IA · UI · Order flow"
+   ],
+   [
+    "PLATFORM",
+    "Tilda · Figma"
+   ],
+   [
+    "LIVE",
+    "pcela-flower.ru ↗"
+   ]
+  ],
+  "heroLabel": [
+   "#  Home — Desktop",
+   "1440 × 900"
+  ],
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "name": "Problem",
+    "intro": "Most people buy flowers in a hurry: a birthday, a date, an apology. They open the site on a phone and want to choose a bouquet, a time and an address in minutes. Many orders go to another person, sometimes anonymously — and the range is wide.",
+    "text": "Most people buy flowers in a hurry: a birthday, a date, an apology. They open the site on a phone and want to choose a bouquet, a time and an address in minutes. Many orders go to another person, sometimes anonymously — and the range is wide.",
+    "hmw": "How might we help someone find the right bouquet and send it to another person quickly, on a phone, without calling the shop?"
+   },
+   "Research": {
+    "label": "02 — RESEARCH",
+    "name": "Research",
+    "stats": [
+     [
+      "05",
+      "Delivery shops reviewed"
+     ],
+     [
+      "04",
+      "Audience groups defined"
+     ],
+     [
+      "05",
+      "Journey stages mapped"
+     ],
+     [
+      "10",
+      "Bouquet categories mapped"
+     ]
+    ],
+    "finding": "Main finding: customers decide by photo and delivery time, not by descriptions. Most order for someone else and worry about timing and the recipient’s details."
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "name": "Audience",
+    "intro": "Who the site is for, what each group needs, and the page that answers it.",
+    "personas": [
+     {
+      "name": "Last-minute buyers",
+      "texts": [
+       "LB",
+       "Last-minute buyers",
+       "“Can it arrive today?”",
+       "NEEDS",
+       "Speed and a clear delivery time.",
+       "→ Online showcase"
+      ]
+     },
+     {
+      "name": "Planners",
+      "texts": [
+       "P",
+       "Planners",
+       "“Something special for Saturday.”",
+       "NEEDS",
+       "Premium and seasonal bouquets.",
+       "→ Collections"
+      ]
+     },
+     {
+      "name": "Couples",
+      "texts": [
+       "C",
+       "Couples",
+       "“Who can do our wedding?”",
+       "NEEDS",
+       "Wedding flowers in one place.",
+       "→ Weddings"
+      ]
+     },
+     {
+      "name": "Companies",
+      "texts": [
+       "C",
+       "Companies",
+       "“Can we set this up monthly?”",
+       "NEEDS",
+       "Regular orders for clients and staff.",
+       "→ For business"
+      ]
+     }
+    ]
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "name": "Journey map",
+    "intro": "What a visitor does, thinks and struggles with at each step, and the design decision that answers it.",
+    "emotion": [
+     80,
+     60,
+     40,
+     40,
+     20
+    ],
+    "curveH": 120,
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "Need",
+       "Browse",
+       "Choose",
+       "Add",
+       "Order"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Remembers an occasion",
+       "Opens a collection",
+       "Opens a bouquet",
+       "Sees gift add-ons",
+       "Fills the order form"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“I need flowers, fast.”",
+       "“Which one looks right?”",
+       "“Is it worth the price?”",
+       "“A card would be nice.”",
+       "“Will it reach the right person?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Unsure what is possible today",
+       "One long list of products",
+       "Small photos, unclear contents",
+       "Add-ons hidden elsewhere",
+       "Recipient details often wrong"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "90-minute promise in the hero",
+       "Online showcase and collections",
+       "Large photos, flowers listed",
+       "Add-ons in the cart",
+       "Form built around “who is it for”"
+      ]
+     }
+    ]
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "name": "Hypotheses",
+    "intro": "Five hypotheses, each with its own metric. Drawn as variants of one component: same structure, different bet.",
+    "items": [
+     [
+      "H1",
+      "Three promises in the hero — 90-minute delivery, freshness, a gift — build trust faster than long text.",
+      "METRIC",
+      "Catalogue clicks from the first screen",
+      "High impact"
+     ],
+     [
+      "H2",
+      "An online showcase and collections by bouquet type help visitors find a bouquet faster.",
+      "METRIC",
+      "Showcase and collection clicks, time to first product",
+      "High impact"
+     ],
+     [
+      "H3",
+      "An order form built around “who is it for” reduces mistakes in recipient details.",
+      "METRIC",
+      "Orders needing a follow-up call",
+      "High impact"
+     ],
+     [
+      "H4",
+      "Gift add-ons offered in the cart raise the average order value.",
+      "METRIC",
+      "Share of orders with an add-on",
+      "Medium impact"
+     ],
+     [
+      "H5",
+      "Messengers, quick order and a callback catch people who prefer to talk.",
+      "METRIC",
+      "Messenger clicks, quick orders, callbacks",
+      "Medium impact"
+     ]
+    ],
+    "setLabel": "❖ Hypothesis"
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "name": "Prioritisation",
+    "intro": "Each hypothesis placed by expected impact and the effort to build it. The hero promises went first; the showcase and the order form were the big bets.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      40,
+      56
+     ],
+     [
+      "H2",
+      560,
+      60
+     ],
+     [
+      "H3",
+      620,
+      150
+     ],
+     [
+      "H4",
+      230,
+      410
+     ],
+     [
+      "H5",
+      50,
+      330
+     ]
+    ]
+   },
+   "Visitor flow": {
+    "label": "07 — VISITOR FLOW",
+    "name": "Visitor flow",
+    "intro": "The main paths through the site, including where visitors split.",
+    "flowId": "63:1436"
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "name": "Sitemap",
+    "intro": "Information architecture agreed with the client before wireframes.",
+    "treeId": "63:1484"
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "Low-fidelity layout first, agreed with the client, then the final interface.",
+    "wireId": "63:1539",
+    "wireLabel": "#  Wireframe",
+    "ui": {
+     "label": [
+      "#  Final UI"
+     ],
+     "img": "63:1562"
+    }
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "name": "Solution",
+    "images": [
+     [
+      "15:1137",
+      0,
+      492,
+      620
+     ],
+     [
+      "15:1138",
+      508,
+      492,
+      620
+     ]
+    ],
+    "pins": [
+     [
+      "1",
+      55,
+      247
+     ],
+     [
+      "2",
+      65,
+      365
+     ],
+     [
+      "3",
+      730,
+      210
+     ],
+     [
+      "4",
+      963,
+      145
+     ]
+    ],
+    "notes": [
+     [
+      "1",
+      "Three promises",
+      "Delivery in 90 minutes, a freshness guarantee, a gift box and bag from 10,000 ₽."
+     ],
+     [
+      "2",
+      "Online showcase",
+      "Ready bouquets delivered in 90 minutes, then bestsellers and categories: premium, mono, baskets, WOW sets."
+     ],
+     [
+      "3",
+      "Add-ons in the cart",
+      "Polaroid cards and CULTI / ’CAUSE fragrances offered right in the cart."
+     ],
+     [
+      "4",
+      "Order form",
+      "Contact, Telegram nickname, recipient, address, delivery date, anonymous delivery."
+     ],
+     [
+      "5",
+      "Quick contact",
+      "VK, WhatsApp, Telegram and Max, a call button, quick order and a callback."
+     ],
+     [
+      "6",
+      "Trade-off",
+      "A form and a manager instead of full checkout: flexible, but one manual step."
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "name": "Screens",
+    "intro": "Key screens on desktop and mobile.",
+    "shots": [
+     {
+      "label": [
+       "#  Home — Desktop",
+       "1440 × 900"
+      ],
+      "img": "63:1572",
+      "w": 1000
+     },
+     {
+      "label": [
+       "#  Catalogue — Desktop"
+      ],
+      "img": "63:1577",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Product — Desktop"
+      ],
+      "img": "63:1581",
+      "w": 492
+     },
+     {
+      "label": [
+       "#  Mobile — Home"
+      ],
+      "img": "63:1586",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Online showcase"
+      ],
+      "img": "63:1590",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Product"
+      ],
+      "img": "63:1594",
+      "w": 238
+     },
+     {
+      "label": [
+       "#  Mobile — Cart"
+      ],
+      "img": "63:1598",
+      "w": 238
+     }
+    ]
+   },
+   "What we measure": {
+    "label": "12 — WHAT WE MEASURE",
+    "name": "What we measure",
+    "intro": "Each hypothesis is tied to one event on the live site. Targets are set once the first month of data gives a baseline.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "HOW IT’S TRACKED",
+      "TARGET"
+     ],
+     [
+      "Arrive",
+      "H1",
+      "Catalogue clicks from the first screen",
+      "Click events on the hero and the three promises",
+      "Baseline after launch"
+     ],
+     [
+      "Browse",
+      "H2",
+      "Showcase and collection clicks, time to first product",
+      "Clicks on showcase cards and category links",
+      "Baseline after launch"
+     ],
+     [
+      "Add",
+      "H4",
+      "Share of orders with an add-on",
+      "Add-on items in Tilda order data",
+      "Baseline after launch"
+     ],
+     [
+      "Order",
+      "H3",
+      "Orders needing a follow-up call",
+      "Manager marks the order after the call",
+      "Baseline after launch"
+     ],
+     [
+      "Any step",
+      "H5",
+      "Messenger clicks, quick orders, callbacks",
+      "Click events on messengers and quick-order submits",
+      "Baseline after launch"
+     ]
+    ]
+   },
+   "Results": {
+    "label": "13 — RESULTS",
+    "name": "Results",
+    "cols": [
+     [
+      "Validated before build",
+      "Reviewed with the client at wireframe and UI stages, then checked on desktop and mobile before launch. After launch, collection clicks, order submissions, add-on share and messenger clicks are tracked."
+     ],
+     [
+      "What I would do next",
+      "In flower e-commerce the photo sells and the form decides. Next: online payment in the cart and one delivery promise across the site."
+     ]
+    ]
+   }
+  },
+  "next": [
+   "NEXT CASE — 01",
+   "Inner Glow",
+   "AI →"
+  ],
+  "heroImg": "15:1009"
+ }
+}
