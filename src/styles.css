@@ -120,9 +120,13 @@ body.inspecting main :is(section,.cs){background-image:linear-gradient(rgba(67,5
 .dark{background:var(--ink);color:var(--white)}
 .dark .muted{color:#a3a3a3}
 .process{padding:140px 0}
-.steps{list-style:none;margin:56px 0 24px;padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;border:1px dashed #555}
-.steps h3{font:500 22px var(--f);margin:12px 0 10px}
-.steps p{color:#bdbdbd;font-size:14px}
+ .steps{list-style:none;margin:56px 0 24px;padding:56px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:56px;border-top:1px dashed #555;border-bottom:1px dashed #555}
+.steps li{position:relative}
+.steps h3{display:flex;align-items:baseline;gap:12px;font:500 30px/1.1 var(--f);letter-spacing:-.02em;margin:0 0 20px}
+.steps h3 .mono{font-size:12px}
+.steps li+li::before{content:"";position:absolute;left:-42px;width:28px;top:62px;border-top:1px solid #8a8a8a}
+.steps li+li::after{content:"40";position:absolute;left:-38px;top:70px;font:400 10px/1 var(--fm);background:#6b6b6b;color:#f0f0f0;padding:3px 4px}
+.steps p{color:#bdbdbd;font-size:15px;line-height:1.55}
 .tag-dark{display:inline-block;background:#2b2b2b;color:#bdbdbd;padding:4px 8px;font-size:11px}
 
 /* numbers */
@@ -369,7 +373,7 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
   .card b{font-size:36px}
   .cards-hint{display:none}
   .process,.libraries{padding:96px 0}
-  .steps{grid-template-columns:1fr;gap:28px;padding:20px}
+  .steps{grid-template-columns:1fr;gap:64px;padding:40px 0}.steps li+li::before{left:0;top:-32px;width:24px}.steps li+li::after{left:32px;top:-38px}
   .numbers{grid-template-columns:1fr;gap:40px;padding-top:96px;padding-bottom:96px}
   .contact{padding:96px 0 40px}
   .contact-title{font-size:58px;margin:20px 0 32px}
