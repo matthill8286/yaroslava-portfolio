@@ -163,7 +163,7 @@ function home() {
 <section class="process dark">
   <div class="wrap">
     <div class="sec-head"><h2 class="h-xl">How I work —<br>in <em>auto layout</em></h2><p class="muted">Every project follows the same four steps. The gaps between them are where the decisions happen.</p></div>
-    <ol class="steps">${steps.map(([t, d], i) => `<li><span class="mono muted">${String(i + 1).padStart(2, '0')}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
+    <ol class="steps">${steps.map(([t, d], i) => `<li><h3><span class="mono muted">${String(i + 1).padStart(2, '0')}</span>${t}</h3><p>${d}</p></li>`).join('')}</ol>
     <span class="mono tag-dark">Horizontal · gap 40 · padding 24</span>
   </div>
 </section>
