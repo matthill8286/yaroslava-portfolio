@@ -189,12 +189,12 @@ function home() {
 
 // ---------- work ----------
 const WORK = [
-  ['inner-glow', 'Inner Glow AI', 'App · 2026', 'Product', 'Mental health app with an AI companion. 200+ screens, from research to a design system. Team: IMPKT.'],
+  ['inner-glow', 'Inner Glow AI', 'App · 2026', 'Product', 'Mental health app with an AI companion. 200+ screens, from research to a design system.'],
   ['jbc', 'JBC Projects', 'Website · 2026', 'Websites', 'Stadium and arena consultancy, London & Cardiff.'],
   ['dalitis', 'Andreas Dalitis & Sons', 'Website · 2026', 'Websites', 'Construction and property developer, Limassol, since 1983.'],
   ['thallo', 'Thallo Building', 'Website · 2026', 'Websites', 'Green office building in Larnaca, 2,068 m².'],
   ['pcela', 'Pcela Flower', 'E‑commerce · 2025', 'E‑commerce', 'Flower delivery in St. Petersburg in 90 minutes.'],
-  ['property-one', 'Property One', 'Design system · 2024', 'Design systems', '30+ documented components with states and specs for handoff. Team: IMPKT.', true],
+  ['property-one', 'Property One', 'Design system · 2024', 'Design systems', '30+ documented components with states and specs for handoff.', true],
   ['offlight', 'Offlight', 'Product', 'Product', 'Platform for creative talent: directory with filters, profiles and multi-step registration.', true],
   ['decaar', 'Decaar', 'E‑commerce · 2026', 'E‑commerce', '25+ page B2B skincare store with a partner area and consultation flow.', true],
   ['kamino', 'KAMINO', 'Website · 2026', 'Websites', 'Premium golf brand with craft-led product pages.', true],
