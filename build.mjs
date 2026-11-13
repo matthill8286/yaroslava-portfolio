@@ -129,7 +129,9 @@ function home() {
     body: `
 <section class="hero wrap">
   <div class="hero-top"><span class="mono">Portfolio / 2026 — v4.0</span><span class="mono">UI/UX &amp; Product designer</span></div>
-  <h1 class="hero-title">I design web products<br>and the <span class="rot" aria-live="polite"><span class="rot-word" data-words="systems,flows,details,logic">systems</span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="dims mono">480 × 138</span><span class="fcursor fc-top" aria-hidden="true"><svg width="16" height="20" viewBox="0 0 16 20"><path d="M1 1v15l4-4 3 7 3-1.4-3-6.6h6z" style="fill:#4338ca;stroke:#fff" stroke-width="1.2"/></svg><b>Yaroslava</b></span></span><br>behind them.</h1>
+  <h1 class="hero-title">I design web products<br>and the <span class="rot" aria-live="polite"><span class="rot-word" data-words="systems,flows,details,logic">systems</span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="dims mono">480 × 138</span><span class="fcursor fc-drag" aria-hidden="true"><svg width="16" height="20" viewBox="0 0 16 20"><path d="M1 1v15l4-4 3 7 3-1.4-3-6.6h6z" style="fill:#4338ca;stroke:#fff" stroke-width="1.2"/></svg><b>Yaroslava</b></span></span><br>behind them.</h1>
+  <div class="comment" role="note"><span class="c-av">YD</span><div><p class="c-h">Yaroslava · just now</p><p>Every project below shows the process, not just the pixels.</p></div></div>
+  <span class="you" aria-hidden="true"><svg width="14" height="18" viewBox="0 0 16 20"><path d="M1 1v15l4-4 3 7 3-1.4-3-6.6h6z" style="fill:#8a8a8a;stroke:#fff" stroke-width="1.2"/></svg><b>You</b></span>
   <div class="hero-foot">
     <p class="lead">UI/UX and product designer based in London and Limassol. For 4+ years I have been turning complex flows into clear, usable websites and products — for SaaS, fintech and e‑commerce teams.</p>
     <span class="mono muted">Scroll to explore ↓</span>

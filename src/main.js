@@ -27,14 +27,54 @@
     setTimeout(() => { label.textContent = 'Copy'; b.classList.remove('done'); }, 1600);
   }));
 
-  // Rotating word
-  const rot = $('.rot-word');
-  if (rot && !reduce) {
-    const words = rot.dataset.words.split(','); let i = 0;
-    setInterval(() => {
-      rot.classList.add('out');
-      setTimeout(() => { i = (i + 1) % words.length; rot.textContent = words[i]; rot.classList.remove('out'); }, 300);
-    }, 2400);
+  // Hero: Yaroslava's cursor grabs the corner handle and resizes the frame to the next word
+  const rotBox = $('.rot'), rot = $('.rot-word');
+  if (rotBox && rot) {
+    const words = rot.dataset.words.split(',');
+    const cur = $('.fc-drag', rotBox), dims = $('.dims', rotBox);
+    const probe = document.createElement('span');
+    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;';
+    rotBox.appendChild(probe);
+    const widthOf = (w) => { probe.textContent = w; return probe.offsetWidth; };
+    const pad = () => rotBox.offsetWidth - rot.offsetWidth;
+    const setDims = () => { if (dims) dims.textContent = Math.round(rotBox.offsetWidth) + ' × ' + Math.round(rotBox.offsetHeight); };
+    const fit = () => { rotBox.style.width = (widthOf(rot.textContent) + pad()) + 'px'; setDims(); };
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    let i = 0;
+    const loop = async () => {
+      rotBox.style.width = rotBox.offsetWidth + 'px'; setDims();
+      cur.classList.add('away');
+      while (true) {
+        await sleep(1400);
+        cur.classList.remove('away'); await sleep(420);           // move onto the handle
+        cur.classList.add('press'); rotBox.classList.add('dragging'); await sleep(160);
+        i = (i + 1) % words.length; const next = words[i];
+        rot.classList.add('out');
+        rotBox.style.width = (widthOf(next) + pad()) + 'px';      // drag: frame resizes, cursor rides the corner
+        const t0 = performance.now();
+        const tick = () => { setDims(); if (performance.now() - t0 < 950) requestAnimationFrame(tick); };
+        tick();
+        await sleep(300); rot.textContent = next; rot.classList.remove('out');
+        await sleep(650);
+        cur.classList.remove('press'); rotBox.classList.remove('dragging'); await sleep(120);
+        cur.classList.add('away');                                 // let go
+      }
+    };
+    if (reduce) fit(); else document.fonts ? document.fonts.ready.then(loop) : loop();
+    addEventListener('resize', () => { rotBox.style.transition = 'none'; fit(); requestAnimationFrame(() => (rotBox.style.transition = '')); });
+  }
+
+  // Comment pops in, visitor cursor ("You") follows the mouse in the hero
+  const cm = $('.comment');
+  if (cm) setTimeout(() => cm.classList.add('in'), reduce ? 0 : 1800);
+  const hero = $('.hero'), you = $('.you');
+  if (hero && you) {
+    hero.addEventListener('mousemove', (e) => {
+      const b = hero.getBoundingClientRect();
+      hero.classList.add('has-you');
+      you.style.transform = `translate(${e.clientX - b.left + 14}px, ${e.clientY - b.top + 12}px)`;
+    });
+    hero.addEventListener('mouseleave', () => hero.classList.remove('has-you'));
   }
 
   // Project hover preview (desktop)
