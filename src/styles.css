@@ -459,3 +459,7 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 @media (max-width:767px){.comment{position:static;margin-top:32px;max-width:none}}
 .hero,.hero *{cursor:default;-webkit-user-select:none;user-select:none}
 .hero a,.hero a *{cursor:pointer}
+/* no text selection on the site (contacts stay selectable) */
+body{-webkit-user-select:none;user-select:none}
+.contact-grid,.facts,.copy span:first-child,.menu-mail{-webkit-user-select:text;user-select:text}
+h1,h2,h3,.sel,.case-head,.next-case{cursor:default}
