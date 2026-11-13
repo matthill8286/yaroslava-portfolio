@@ -129,7 +129,7 @@ function home() {
     body: `
 <section class="hero wrap">
   <div class="hero-top"><span class="mono">Portfolio / 2026 — v4.0</span><span class="mono">UI/UX &amp; Product designer</span></div>
-  <h1 class="hero-title">I design web products<br>and the <span class="rot" aria-live="polite"><span class="rot-word" data-words="systems,flows,details,logic">systems</span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i></span><br>behind them.</h1>
+  <h1 class="hero-title">I design web products<br>and the <span class="rot" aria-live="polite"><span class="rot-word" data-words="systems,flows,details,logic">systems</span><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="dims mono">480 × 138</span><span class="fcursor fc-top" aria-hidden="true"><svg width="16" height="20" viewBox="0 0 16 20"><path d="M1 1v15l4-4 3 7 3-1.4-3-6.6h6z" style="fill:#4338ca;stroke:#fff" stroke-width="1.2"/></svg><b>Yaroslava</b></span></span><br>behind them.</h1>
   <div class="hero-foot">
     <p class="lead">UI/UX and product designer based in London and Limassol. For 4+ years I have been turning complex flows into clear, usable websites and products — for SaaS, fintech and e‑commerce teams.</p>
     <span class="mono muted">Scroll to explore ↓</span>
@@ -311,7 +311,7 @@ function emotionSVG(vals) {
   const n = vals.length, W = 1000, H = 120;
   const xs = vals.map((_, i) => ((i + 0.5) / n) * W);
   const pts = vals.map((v, i) => `${xs[i]},${v}`).join(' ');
-  return `<svg class="emo" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${W}" y1="100" y2="100" stroke="var(--line)"/><polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/>${vals.map((v, i) => `<circle cx="${xs[i]}" cy="${v}" r="5" fill="var(--accent)" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`;
+  return `<svg class="emo" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${W}" y1="100" y2="100" style="stroke:#e5e5e5;stroke-dasharray:4 4" vector-effect="non-scaling-stroke"/><polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/>${vals.map((v, i) => `<circle cx="${xs[i]}" cy="${v}" r="5" fill="var(--accent)" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`;
 }
 
 // ---------- case ----------
@@ -389,7 +389,7 @@ function caseStudy(slug, idx) {
 <div class="case-bar wrap"><a href="/work/" class="mono">← All work</a><span class="mono muted hide-m">${esc(c.crumb)}</span><a href="/work/${nextSlug}/" class="mono">Next case →</a></div>
 <header class="case-head wrap">
   <p class="mono muted">${esc(c.eyebrow)}</p>
-  <h1 class="h-xxl">${esc(c.title)}</h1>
+  <h1 class="h-xxl"><span class="sel">${esc(c.title)}<i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="fcursor" aria-hidden="true"><svg width="16" height="20" viewBox="0 0 16 20"><path d="M1 1v15l4-4 3 7 3-1.4-3-6.6h6z" style="fill:#4338ca;stroke:#fff" stroke-width="1.2"/></svg><b>Yaroslava</b></span></span></h1>
   <p class="case-intro">${esc(c.intro)}</p>
   <dl class="meta">${meta}</dl>
 </header>
