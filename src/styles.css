@@ -457,3 +457,5 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 .you svg{max-width:none}
 @media (hover:hover) and (pointer:fine){.hero.has-you .you{display:flex}}
 @media (max-width:767px){.comment{position:static;margin-top:32px;max-width:none}}
+.hero,.hero *{cursor:default;-webkit-user-select:none;user-select:none}
+.hero a,.hero a *{cursor:pointer}
