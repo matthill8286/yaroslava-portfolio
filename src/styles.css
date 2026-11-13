@@ -69,11 +69,12 @@ body.inspecting main :is(section,.cs){background-image:linear-gradient(rgba(67,5
 .menu-mail{font-size:18px;text-decoration:none}
 
 /* home hero */
-.hero{padding-top:28px;padding-bottom:96px;background-image:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),var(--surface-2) calc(100%/12 - 1px) calc(100%/12));background-clip:content-box}
+.hero{position:relative;overflow-x:clip;padding-top:28px;padding-bottom:96px;background-image:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),var(--surface-2) calc(100%/12 - 1px) calc(100%/12));background-clip:content-box}
 .hero-top{display:flex;justify-content:space-between;padding:12px 0 56px;color:var(--ink-muted)}
 .hero-title{font:500 clamp(48px,9.4vw,136px)/.95 var(--f);letter-spacing:-.05em;max-width:12ch}
 .rot{position:relative;display:inline-block;color:var(--accent);padding:0 .1em;outline:1.5px solid var(--accent);outline-offset:4px}
-.rot-word{display:inline-block;transition:opacity .3s,transform .3s}
+.rot{white-space:nowrap;vertical-align:bottom;transition:width .9s cubic-bezier(.6,0,.2,1)}
+.rot-word{display:inline-block;transition:opacity .25s,transform .25s}
 .rot-word.out{opacity:0;transform:translateY(.15em)}
 .h.tl{left:-9px;top:-9px}.h.tr{right:-9px;top:-9px}.h.bl{left:-9px;bottom:-9px}.h.br{right:-9px;bottom:-9px}
 .sel{position:relative;display:inline-block;outline:1.5px solid var(--accent);outline-offset:4px}
@@ -208,7 +209,7 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 /* case */
 .case-bar{display:flex;justify-content:space-between;gap:16px;padding-top:24px}
 .case-bar a{text-decoration:none}.case-bar a:hover{color:var(--accent)}
-.case-head{padding-top:80px;padding-bottom:56px;display:grid;gap:24px}
+.case-head{overflow-x:clip;padding-top:80px;padding-bottom:56px;display:grid;gap:24px}
 .case-intro{font:500 clamp(22px,2.6vw,36px)/1.15 var(--f);letter-spacing:-.02em;max-width:30ch}
 .meta{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;margin:32px 0 0;padding-top:20px;border-top:1px solid var(--line)}
 .meta dt{margin-bottom:8px;font-size:11px}
@@ -439,3 +440,20 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 .fcursor svg{max-width:none;flex:none}
 .jm-table{border-top:0}
 .jm-row.jm-emo{border-bottom:0}
+
+/* hero: Yaroslava drags the frame, comment, visitor cursor */
+.fc-drag{animation:none;transition:transform .35s cubic-bezier(.3,.7,.2,1)}
+.fc-drag svg{transition:transform .15s}
+.fc-drag.away{transform:translate(28px,22px)}
+.fc-drag.press svg{transform:scale(.82)}
+.rot.dragging .h.br{background:var(--accent)}
+.comment{position:absolute;right:max(var(--gutter),env(safe-area-inset-right));top:62%;display:flex;gap:14px;align-items:center;background:var(--white);padding:16px 22px 16px 18px;box-shadow:0 18px 40px rgba(17,17,17,.12);max-width:440px;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .5s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.comment.in{opacity:1;transform:none}
+.comment p{font-size:16px;line-height:1.35}
+.comment .c-h{font-weight:500;margin-bottom:2px}
+.c-av{flex:none;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:500 13px var(--fm)}
+.you{position:absolute;left:0;top:0;display:none;align-items:flex-start;gap:2px;pointer-events:none;z-index:5}
+.you b{margin-top:14px;background:#8a8a8a;color:#fff;font:500 12px/1 var(--f);padding:5px 7px}
+.you svg{max-width:none}
+@media (hover:hover) and (pointer:fine){.hero.has-you .you{display:flex}}
+@media (max-width:767px){.comment{position:static;margin-top:32px;max-width:none}}
