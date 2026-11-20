@@ -8,7 +8,7 @@ const OUT = path.join(ROOT, 'dist');
 const cases = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/cases.json'), 'utf8'));
 const diagrams = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/diagrams.json'), 'utf8'));
 
-const ORDER = ['inner-glow', 'jbc', 'dalitis', 'thallo', 'pcela'];
+const ORDER = ['strata', 'inner-glow', 'jbc', 'dalitis', 'thallo', 'pcela'];
 const SITE = 'Yaroslava Dzihim';
 const EMAIL = 'yaroslavadzihim@gmail.com';
 const CV = '/Yaroslava_Dzihim_CV.pdf';
@@ -107,7 +107,7 @@ function contact() {
 function home() {
   const rows = ORDER.map((s, i) => {
     const c = cases[s];
-    const kind = { 'inner-glow': 'App · 2026', pcela: 'E‑commerce · 2025' }[s] || 'Website · 2026';
+    const kind = { strata: 'Product · 2026', 'inner-glow': 'App · 2026', pcela: 'E‑commerce · 2025' }[s] || 'Website · 2026';
     return `<a class="row" href="/work/${s}/" data-preview="${img('cover-' + s)}">
       <span class="row-i">${String(i + 1).padStart(2, '0')}</span>
       <span class="row-t">${esc(c.title)}</span>
@@ -139,7 +139,7 @@ function home() {
 </section>
 
 <section class="work-list wrap" aria-labelledby="sw">
-  <div class="sec-head"><h2 id="sw" class="h-xl">Selected work <sup>(05)</sup></h2><span class="mono muted hide-m">Hover a project to preview ↘</span></div>
+  <div class="sec-head"><h2 id="sw" class="h-xl">Selected work <sup>(06)</sup></h2><span class="mono muted hide-m">Hover a project to preview ↘</span></div>
   <div class="rows" data-rows>${rows}<img class="preview" alt="" aria-hidden="true"></div>
 </section>
 
@@ -189,6 +189,7 @@ function home() {
 
 // ---------- work ----------
 const WORK = [
+  ['strata', 'Strata', 'Product · 2026', 'Product', 'Site builder and CMS for companies that run many sites: one brand, one set of words, a full audit trail.'],
   ['inner-glow', 'Inner Glow AI', 'App · 2026', 'Product', 'Mental health app with an AI companion. 200+ screens, from research to a design system.'],
   ['jbc', 'JBC Projects', 'Website · 2026', 'Websites', 'Stadium and arena consultancy, London & Cardiff.'],
   ['dalitis', 'Andreas Dalitis & Sons', 'Website · 2026', 'Websites', 'Construction and property developer, Limassol, since 1983.'],
@@ -218,7 +219,7 @@ function work() {
     body: `
 <section class="page-head wrap">
   <p class="mono muted">All projects · 2022 — 2026</p>
-  <h1 class="h-xxl">Work <sup>(09)</sup></h1>
+  <h1 class="h-xxl">Work <sup>(10)</sup></h1>
 </section>
 <section class="wrap work-grid-wrap">
   <div class="filters" role="toolbar" aria-label="Filter projects">${cats.map((c, i) => `<button class="filter" aria-pressed="${i === 0}" data-filter="${c}">${c} <span>${count(c)}</span></button>`).join('')}</div>

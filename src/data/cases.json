@@ -1,8 +1,496 @@
 {
+ "strata": {
+  "slug": "strata",
+  "crumb": "Work / 01 — Strata",
+  "eyebrow": "CASE 01 · PRODUCT DESIGN · CMS",
+  "title": "Strata",
+  "intro": "A site builder for companies that run more than one site. One brand, one set of words, many sites — with a full audit trail.",
+  "meta": [
+   [
+    "ROLE",
+    "Product Designer"
+   ],
+   [
+    "TEAM",
+    "IMPKT."
+   ],
+   [
+    "TIMELINE",
+    "2026 · in progress"
+   ],
+   [
+    "SCOPE",
+    "UX · UI · Design system"
+   ],
+   [
+    "TOOLS",
+    "Figma · FigJam"
+   ],
+   [
+    "PLATFORM",
+    "Web app · CMS"
+   ]
+  ],
+  "heroLabel": [
+   "#  Strata · overview",
+   "1920 × 1080"
+  ],
+  "next": [
+   "NEXT CASE — 02",
+   "Inner Glow",
+   "AI →"
+  ],
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "name": "Problem",
+    "text": "Companies that sell through partners end up with many copies of the same website. Every copy drifts: a headline changes on one site and not the others, a partner’s colour leaks into the wrong place, and a new screen needs a front-end release even when it is only wording. Nobody can say which version is live, or who changed it.",
+    "hmw": "How might we let a team change a line once, keep each partner’s look, and always know what is live and how to undo it?"
+   },
+   "Research": {
+    "label": "02 — RESEARCH",
+    "name": "Research",
+    "stats": [
+     [
+      "3",
+      "Content layers: house, partner, tier"
+     ],
+     [
+      "~20",
+      "Brand inputs — every other token derives"
+     ],
+     [
+      "16",
+      "Fixed page templates the new editor replaces"
+     ],
+     [
+      "WCAG 2.2",
+      "Checked on every page before publish"
+     ]
+    ],
+    "finding": "Main finding: the hard part was never typing the words. It was knowing which site a change reaches, whether it is safe to publish, and how to get back if it is not."
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "name": "Audience",
+    "intro": "Three people use the same CMS for different jobs. Each one gets a part of the interface built around that job.",
+    "personas": [
+     {
+      "name": "Content editors",
+      "texts": [
+       "CE",
+       "Content editors",
+       "“I just need to change one line.”",
+       "NEEDS",
+       "Edit the words on the page itself, without a separate mode.",
+       "→ Inline editing"
+      ]
+     },
+     {
+      "name": "Brand and partner managers",
+      "texts": [
+       "BM",
+       "Brand & partner managers",
+       "“Our partner wants their colour, not their own copy.”",
+       "NEEDS",
+       "Change only what differs and inherit the rest.",
+       "→ Partner layer"
+      ]
+     },
+     {
+      "name": "Developers",
+      "texts": [
+       "DV",
+       "Developers",
+       "“The CMS shouldn’t break my components.”",
+       "NEEDS",
+       "Components stay in code; the CMS only places them.",
+       "→ Components"
+      ]
+     }
+    ]
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "name": "Journey map",
+    "intro": "What an editor does, thinks and struggles with on the way from a request to a live change, and the design decision that answers it.",
+    "emotion": [
+     60,
+     40,
+     70,
+     30,
+     85
+    ],
+    "curveH": 120,
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "Request",
+       "Find",
+       "Edit",
+       "Check",
+       "Publish"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Gets a change from a partner",
+       "Looks for the page and the site",
+       "Changes the wording",
+       "Reviews before going live",
+       "Publishes and tells the team"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“Which sites does this affect?”",
+       "“Is this the right copy of the page?”",
+       "“Where is the edit mode?”",
+       "“Did I break anything?”",
+       "“What if I need to undo it?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Six copies of one page",
+       "No single source of truth",
+       "Forms far from the real page",
+       "Accessibility checked too late",
+       "No clear live version"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "One page, sites as layers",
+       "Workspace switcher and page list",
+       "Inline text editing on the page",
+       "WCAG checks block publishing",
+       "Versions with a LIVE pointer"
+      ]
+     }
+    ]
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "name": "Hypotheses",
+    "intro": "Six bets for the authoring app, each with the metric that will show whether it works.",
+    "setLabel": "❖ Hypothesis",
+    "items": [
+     [
+      "H1",
+      "Editing text inline on the page is faster than a separate “edit wording” form.",
+      "METRIC",
+      "Time to change one line",
+      "High impact"
+     ],
+     [
+      "H2",
+      "Showing where each value comes from (house, partner, tier) stops changes leaking between sites.",
+      "METRIC",
+      "Changes reverted for the wrong site",
+      "High impact"
+     ],
+     [
+      "H3",
+      "Blocking publish on WCAG errors fixes issues before they reach any site.",
+      "METRIC",
+      "Accessibility issues found after release",
+      "High impact"
+     ],
+     [
+      "H4",
+      "A visible LIVE pointer and one-click rollback make editors publish more often.",
+      "METRIC",
+      "Publishes per week, rollbacks used",
+      "High impact"
+     ],
+     [
+      "H5",
+      "Three clear names — Sections, Templates, Components — remove confusion about what can be edited.",
+      "METRIC",
+      "Support questions about naming",
+      "Medium impact"
+     ],
+     [
+      "H6",
+      "About twenty brand inputs are enough to onboard a new partner without a designer.",
+      "METRIC",
+      "Time to launch a partner site",
+      "Medium impact"
+     ]
+    ]
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "name": "Prioritisation",
+    "intro": "Each bet placed by expected impact and the effort to build it. Versions and inheritance went first: everything else sits on top of them.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      300,
+      60
+     ],
+     [
+      "H2",
+      620,
+      90
+     ],
+     [
+      "H3",
+      230,
+      160
+     ],
+     [
+      "H4",
+      700,
+      170
+     ],
+     [
+      "H5",
+      80,
+      330
+     ],
+     [
+      "H6",
+      640,
+      340
+     ]
+    ]
+   },
+   "Visitor flow": {
+    "label": "07 — EDITOR FLOW",
+    "name": "Visitor flow",
+    "intro": "From a request to a live change. Wording and layout take different paths but end in the same checks and the same publish."
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "name": "Sitemap",
+    "intro": "Each workspace holds its own pages, questions and journeys. Brand, sites, releases and history are shared across workspaces by design."
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "Low-fidelity layout first, agreed with the team, then the final interface in the petrol palette."
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "name": "Solution",
+    "pins": [
+     [
+      "1",
+      45,
+      90
+     ],
+     [
+      "2",
+      230,
+      290
+     ],
+     [
+      "3",
+      420,
+      365
+     ],
+     [
+      "4",
+      548,
+      120
+     ],
+     [
+      "5",
+      548,
+      360
+     ],
+     [
+      "6",
+      905,
+      410
+     ]
+    ],
+    "notes": [
+     [
+      "1",
+      "Brand inputs",
+      "About twenty inputs per brand: colours, type, radius, logo. Everything else is derived."
+     ],
+     [
+      "2",
+      "Derived tokens",
+      "Each input generates a full ramp, so a partner gets a complete palette from one colour."
+     ],
+     [
+      "3",
+      "Measured contrast",
+      "Text-on-colour is measured, not typed, so there is nowhere to enter an unreadable pair."
+     ],
+     [
+      "4",
+      "Publish checks",
+      "Heading order, alternative text, reachability and references — publishing waits until all pass."
+     ],
+     [
+      "5",
+      "Reach before publish",
+      "Every change shows which sites it applies to before it goes live."
+     ],
+     [
+      "6",
+      "Trade-off",
+      "Immutable versions mean more history to show. The LIVE pointer keeps it readable: one version is live, any other is one click away."
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "name": "Screens",
+    "intro": "Key screens of the authoring app, and one page rendered for four partner sites.",
+    "shots": [
+     {
+      "label": [
+       "#  Page editor",
+       "1920 × 1080"
+      ]
+     },
+     {
+      "label": [
+       "#  Resolved content"
+      ]
+     },
+     {
+      "label": [
+       "#  Versions"
+      ]
+     },
+     {
+      "label": [
+       "#  Acme Homes"
+      ]
+     },
+     {
+      "label": [
+       "#  Meridian"
+      ]
+     },
+     {
+      "label": [
+       "#  Northgate"
+      ]
+     },
+     {
+      "label": [
+       "#  Harbourline"
+      ]
+     }
+    ]
+   },
+   "What we measure": {
+    "label": "12 — WHAT WE MEASURE",
+    "name": "What we measure",
+    "intro": "Six hypotheses across five stages. Targets are set before launch and tracked once the first partners are live.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "TARGET",
+      "STATUS"
+     ],
+     [
+      "Edit",
+      "H1",
+      "Time to change one line",
+      "Under 1 minute",
+      "Tracked after launch"
+     ],
+     [
+      "Reach",
+      "H2",
+      "Changes reverted for the wrong site",
+      "Zero",
+      "Tracked after launch"
+     ],
+     [
+      "Quality",
+      "H3",
+      "Accessibility issues found after release",
+      "Zero blocking issues",
+      "Built into publish"
+     ],
+     [
+      "Confidence",
+      "H4",
+      "Publishes per week, rollbacks used",
+      "Baseline after launch",
+      "Tracked after launch"
+     ],
+     [
+      "Onboarding",
+      "H5, H6",
+      "Time to launch a partner site",
+      "Under one day",
+      "Tracked after launch"
+     ]
+    ]
+   },
+   "Results": {
+    "label": "13 — RESULTS",
+    "name": "Results",
+    "cols": [
+     [
+      "Where it is now",
+      "The authoring app is being built from these designs: the page editor, inheritance, brand tokens, versions and publish checks. Every flow was redrawn from the first sketches into one system in the petrol palette."
+     ],
+     [
+      "What I would do next",
+      "A Figma-to-Strata import, so a layout drawn in Figma lands in the editor as Sections and Templates. Then test inline editing with real editors and measure time to change one line."
+     ]
+    ]
+   }
+  }
+ },
  "inner-glow": {
   "slug": "inner-glow",
-  "crumb": "Work / 01 — Inner Glow AI",
-  "eyebrow": "CASE 01 · PRODUCT DESIGN · MOBILE APP",
+  "crumb": "Work / 02 — Inner Glow AI",
+  "eyebrow": "CASE 02 · PRODUCT DESIGN · MOBILE APP",
   "title": "Inner Glow AI",
   "intro": "A mental health app that turns daily check-ins into one score people can understand, and gives a next step for every result.",
   "meta": [
@@ -535,7 +1023,7 @@
    }
   },
   "next": [
-   "NEXT CASE — 02",
+   "NEXT CASE — 03",
    "JBC",
    "Projects →"
   ],
@@ -543,8 +1031,8 @@
  },
  "jbc": {
   "slug": "jbc",
-  "crumb": "Work / 02 — JBC Projects",
-  "eyebrow": "CASE 02 · UI/UX & DIGITAL PRODUCT DESIGN",
+  "crumb": "Work / 03 — JBC Projects",
+  "eyebrow": "CASE 03 · UI/UX & DIGITAL PRODUCT DESIGN",
   "title": "JBC Projects",
   "intro": "A website that answers one question for venue owners: has this firm delivered a project like mine?",
   "meta": [
@@ -1041,7 +1529,7 @@
    }
   },
   "next": [
-   "NEXT CASE — 03",
+   "NEXT CASE — 04",
    "Andreas Dalitis",
    "& Sons →"
   ],
@@ -1049,8 +1537,8 @@
  },
  "dalitis": {
   "slug": "dalitis",
-  "crumb": "Work / 03 — Andreas Dalitis & Sons",
-  "eyebrow": "CASE 03 · UI/UX & DIGITAL PRODUCT DESIGN",
+  "crumb": "Work / 04 — Andreas Dalitis & Sons",
+  "eyebrow": "CASE 04 · UI/UX & DIGITAL PRODUCT DESIGN",
   "title": "Andreas Dalitis & Sons",
   "intro": "One website for three audiences: homebuyers, investors and businesses — and a reason to trust a new development.",
   "meta": [
@@ -1547,7 +2035,7 @@
    }
   },
   "next": [
-   "NEXT CASE — 04",
+   "NEXT CASE — 05",
    "Thallo",
    "Building →"
   ],
@@ -1555,8 +2043,8 @@
  },
  "thallo": {
   "slug": "thallo",
-  "crumb": "Work / 04 — Thallo Building",
-  "eyebrow": "CASE 04 · UI/UX & DIGITAL PRODUCT DESIGN",
+  "crumb": "Work / 05 — Thallo Building",
+  "eyebrow": "CASE 05 · UI/UX & DIGITAL PRODUCT DESIGN",
   "title": "Thallo Building",
   "intro": "Selling 2,068 m² of green office space in Larnaca before the building exists.",
   "meta": [
@@ -2053,7 +2541,7 @@
    }
   },
   "next": [
-   "NEXT CASE — 05",
+   "NEXT CASE — 06",
    "Pcela",
    "Flower →"
   ],
@@ -2061,8 +2549,8 @@
  },
  "pcela": {
   "slug": "pcela",
-  "crumb": "Work / 05 — Pcela Flower",
-  "eyebrow": "CASE 05 · E‑COMMERCE · UI/UX DESIGN",
+  "crumb": "Work / 06 — Pcela Flower",
+  "eyebrow": "CASE 06 · E‑COMMERCE · UI/UX DESIGN",
   "title": "Pcela Flower",
   "intro": "A flower shop where a gift for someone else is ordered on a phone in a few minutes.",
   "meta": [
