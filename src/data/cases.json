@@ -4,7 +4,7 @@
   "crumb": "Work / 01 — Strata",
   "eyebrow": "CASE 01 · PRODUCT DESIGN · CMS",
   "title": "Strata",
-  "intro": "A content tool for insurance products sold through partner websites. One set of pages and journeys, each partner in its own brand, and every change checked, signed off and reversible.",
+  "intro": "A multi-site CMS for any business that runs many websites from one place. Shared pages and journeys, each site in its own brand, and every change checked, signed off and reversible.",
   "meta": [
    [
     "ROLE",
@@ -44,8 +44,8 @@
    "Problem": {
     "label": "01 — PROBLEM",
     "name": "Problem",
-    "text": "An insurance product is sold through a dozen partner websites. Each partner has its own brand, but the pages, prices and questions are mostly the same. Today every change means touching every site by hand: a price updated on nine sites and forgotten on three, a broken link nobody sees until a customer does, and no clear answer to “what was live on Northwind last Tuesday?”",
-    "hmw": "How might we let a product team change a page once, see exactly which partner sites it reaches, and publish or roll back with confidence?"
+    "text": "Many businesses run the same content across many websites: partners, regions, franchises or brands. Each site looks different, but the pages, prices and questions are mostly the same. Today every change means touching every site by hand: a price updated on nine sites and forgotten on three, a broken link nobody sees until a customer does, and no clear answer to “what was live on this site last Tuesday?”",
+    "hmw": "How might we let a team change a page once, see exactly which sites it reaches, and publish or roll back with confidence?"
    },
    "Research": {
     "label": "02 — SCOPE",
@@ -61,7 +61,7 @@
      ],
      [
       "12",
-      "Partner sites on one product"
+      "Branded sites running from one workspace in the designs"
      ],
      [
       "42",
@@ -73,7 +73,7 @@
    "Audience": {
     "label": "03 — AUDIENCE",
     "name": "Audience",
-    "intro": "Three roles share one tool. Each gets a home screen built around what needs them today.",
+    "intro": "Three roles share one tool, whatever the business. Each gets a home screen built around what needs them today.",
     "personas": [
      {
       "name": "Product managers",
@@ -98,13 +98,13 @@
       ]
      },
      {
-      "name": "Partner managers",
+      "name": "Site managers",
       "texts": [
-       "PT",
-       "Partner managers",
-       "“Northwind wants its own colours, not its own pages.”",
+       "SM",
+       "Site managers",
+       "“This partner wants its own colours, not its own pages.”",
        "NEEDS",
-       "A brand per partner that changes the look, never the content.",
+       "A brand per site that changes the look, never the content.",
        "→ Sites · Brand"
       ]
      }
@@ -136,18 +136,18 @@
      {
       "label": "DOING",
       "cells": [
-       "Gets new autumn prices",
+       "Gets new prices to roll out",
        "Changes the Pricing page",
        "Reviews before publishing",
        "Asks a manager to approve",
-       "Publishes to partner sites"
+       "Publishes to every site"
       ]
      },
      {
       "label": "THINKING",
       "cells": [
        "“Which sites does this touch?”",
-       "“Will this look right for every partner?”",
+       "“Will this look right on every site?”",
        "“Did I break anything?”",
        "“Who has to approve this?”",
        "“Can I undo it if it goes wrong?”"
@@ -190,7 +190,7 @@
      ],
      [
       "H2",
-      "Showing “9 sites change, 3 stay” before publishing stops changes reaching the wrong partner.",
+      "Showing “9 sites change, 3 stay” before publishing stops changes reaching the wrong site.",
       "METRIC",
       "Rollbacks caused by wrong sites",
       "High impact"
@@ -211,9 +211,9 @@
      ],
      [
       "H5",
-      "Measuring a partner’s brand from its website gets a new site live without a designer.",
+      "Measuring a brand from an existing website gets a new site live without a designer.",
       "METRIC",
-      "Time to launch a partner site",
+      "Time to launch a new site",
       "Medium impact"
      ],
      [
@@ -304,7 +304,7 @@
    "Sitemap": {
     "label": "08 — SITEMAP",
     "name": "Sitemap",
-    "intro": "After sign-in you pick a product, such as Home insurance. Every product has the same sections in the sidebar. Library and Sites are shared by all of its partner sites."
+    "intro": "After sign-in you pick a workspace (in the designs, a home insurance product). Every workspace has the same sections in the sidebar. Library and Sites are shared by all of its sites."
    },
    "Wireframes to UI": {
     "label": "09 — WIREFRAMES TO UI",
@@ -354,8 +354,8 @@
      ],
      [
       "2",
-      "Partner wording kept",
-      "If a partner has its own wording, the review shows it is kept, so a shared change never overwrites it."
+      "Site wording kept",
+      "If a site has its own wording, the review shows it is kept, so a shared change never overwrites it."
      ],
      [
       "3",
@@ -382,7 +382,7 @@
    "Screens": {
     "label": "11 — SCREENS",
     "name": "Screens",
-    "intro": "Key screens: the page designer, journeys, publishing, partner brands, releases, history and checks.",
+    "intro": "Key screens: the page designer, journeys, publishing, site brands, releases, history and checks.",
     "shots": [
      {
       "label": [
@@ -425,7 +425,7 @@
    "What we measure": {
     "label": "12 — WHAT WE MEASURE",
     "name": "What we measure",
-    "intro": "Six hypotheses across five stages. Targets are set before launch and tracked once the first partners are live.",
+    "intro": "Six hypotheses across five stages. Targets are set before launch and tracked once the first sites are live.",
     "table": [
      [
       "STAGE",
@@ -465,7 +465,7 @@
      [
       "Onboarding",
       "H5, H6",
-      "Time to launch a partner site",
+      "Time to launch a new site",
       "Under one day",
       "Tracked after launch"
      ]
@@ -481,7 +481,7 @@
      ],
      [
       "What I would do next",
-      "Test the publish review with real editors, then bring a partner’s brand into Figma as variables and back, so designers and Strata share one source."
+      "Test the publish review with real editors in different kinds of business, then bring a site’s brand into Figma as variables and back, so designers and Strata share one source."
      ]
     ]
    }
