@@ -357,7 +357,7 @@ function caseStudy(slug, idx) {
   out.push(sec('prioritisation', Q.label, `<p class="intro">${esc(Q.intro)}</p><div class="matrix">${quad.map(([t]) => `<div class="q"><span class="mono">${esc(t)}</span></div>`).join('')}<span class="ax ax-y mono">IMPACT ↑</span><span class="ax ax-x mono">EFFORT →</span>${Q.chips.map(([id, x, y]) => `<span class="mchip" style="left:${(x / Q.w) * 100}%;top:${(y / Q.h) * 100}%"><b>${esc(id)}</b><span class="hide-m">${esc((hypText[id] || '').split(/[,.—]/)[0].slice(0, 38))}…</span></span>`).join('')}</div><ol class="legend">${Q.chips.slice().sort((a, b) => a[0].localeCompare(b[0], 'en', { numeric: true })).map(([id]) => `<li><b>${esc(id)}</b><span>${esc(hypText[id] || '')}</span></li>`).join('')}</ol>`));
   // Flow
   const F = S['Visitor flow'];
-  out.push(sec('flow', F.label, `<p class="intro">${esc(F.intro)}</p><div class="diagram">${flowSVG(D.flowD, 'flow-d')}${flowSVG(D.flowM, 'flow-m')}</div>`, 'data-toc="Flow"'));
+  out.push(sec('flow', F.label, `<p class="intro">${esc(F.intro)}</p><div class="diagram">${c.flowImg ? `<div class="flow-scroll"><img class="flow-img" src="${c.flowImg}" alt="${esc(c.title)} user flow" loading="lazy"></div>` : `${flowSVG(D.flowD, 'flow-d')}${flowSVG(D.flowM, 'flow-m')}`}</div>`, 'data-toc="Flow"'));
   // Sitemap
   const M = S['Sitemap'];
   out.push(sec('sitemap', M.label, `<p class="intro">${esc(M.intro)}</p><div class="sitemap"><div class="sm-root">${esc(D.sitemap.root)}</div><ul class="sm-sections" style="--n:${D.sitemap.sections.length}">${D.sitemap.sections.map((s) => `<li><span class="sm-sec">${esc(s.name)}</span>${s.pages.length ? `<ul class="sm-pages">${s.pages.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul></div>`));
@@ -372,7 +372,7 @@ function caseStudy(slug, idx) {
   const Sc = S['Screens'];
   const shots = Sc.shots.map((s, i) => ({ ...s, file: img(`${slug}-shot-${i + 1}`) }));
   const fig = (s, cls) => `<figure class="shot ${cls}"><figcaption class="pc-label"><span class="mono">${esc(s.label[0])}</span>${s.label[1] ? `<span class="mono muted">${esc(s.label[1])}</span>` : ''}</figcaption><img src="${s.file}" alt="${esc(s.label[0].replace('#', '').trim())}" loading="lazy"></figure>`;
-  out.push(sec('screens', Sc.label, `<p class="intro">${esc(Sc.intro)}</p><div class="shots">${fig(shots[0], 'wide')}<div class="shots-2">${fig(shots[1], '')}${fig(shots[2], '')}</div><div class="shots-4">${shots.slice(3).map((s) => fig(s, 'mob')).join('')}</div></div>`));
+  out.push(sec('screens', Sc.label, `<p class="intro">${esc(Sc.intro)}</p><div class="shots">${fig(shots[0], 'wide')}<div class="shots-2">${fig(shots[1], '')}${fig(shots[2], '')}</div>${c.desktopShots ? `<div class="shots-2">${shots.slice(3, 5).map((s) => fig(s, '')).join('')}</div><div class="shots-2">${shots.slice(5, 7).map((s) => fig(s, '')).join('')}</div>` : `<div class="shots-4">${shots.slice(3).map((s) => fig(s, 'mob')).join('')}</div>`}</div>`));
   // Measure
   const Me = S['What we measure'];
   const [head, ...rows] = Me.table;

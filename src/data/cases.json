@@ -4,7 +4,7 @@
   "crumb": "Work / 01 — Strata",
   "eyebrow": "CASE 01 · PRODUCT DESIGN · CMS",
   "title": "Strata",
-  "intro": "A site builder for companies that run more than one site. One brand, one set of words, many sites — with a full audit trail.",
+  "intro": "A content tool for insurance products sold through partner websites. One set of pages and journeys, each partner in its own brand, and every change checked, signed off and reversible.",
   "meta": [
    [
     "ROLE",
@@ -16,7 +16,7 @@
    ],
    [
     "TIMELINE",
-    "2026 · in progress"
+    "2026 · in build"
    ],
    [
     "SCOPE",
@@ -27,13 +27,13 @@
     "Figma · FigJam"
    ],
    [
-    "PLATFORM",
-    "Web app · CMS"
+    "SIZE",
+    "244 screens · 17 flows"
    ]
   ],
   "heroLabel": [
-   "#  Strata · overview",
-   "1920 × 1080"
+   "#  Strata · walkthrough",
+   "1440 × 900"
   ],
   "next": [
    "NEXT CASE — 02",
@@ -44,68 +44,68 @@
    "Problem": {
     "label": "01 — PROBLEM",
     "name": "Problem",
-    "text": "Companies that sell through partners end up with many copies of the same website. Every copy drifts: a headline changes on one site and not the others, a partner’s colour leaks into the wrong place, and a new screen needs a front-end release even when it is only wording. Nobody can say which version is live, or who changed it.",
-    "hmw": "How might we let a team change a line once, keep each partner’s look, and always know what is live and how to undo it?"
+    "text": "An insurance product is sold through a dozen partner websites. Each partner has its own brand, but the pages, prices and questions are mostly the same. Today every change means touching every site by hand: a price updated on nine sites and forgotten on three, a broken link nobody sees until a customer does, and no clear answer to “what was live on Northwind last Tuesday?”",
+    "hmw": "How might we let a product team change a page once, see exactly which partner sites it reaches, and publish or roll back with confidence?"
    },
    "Research": {
-    "label": "02 — RESEARCH",
+    "label": "02 — SCOPE",
     "name": "Research",
     "stats": [
      [
-      "3",
-      "Content layers: house, partner, tier"
+      "244",
+      "Screens designed"
      ],
      [
-      "~20",
-      "Brand inputs — every other token derives"
+      "17",
+      "User flows, from sign-in to analytics"
      ],
      [
-      "16",
-      "Fixed page templates the new editor replaces"
+      "12",
+      "Partner sites on one product"
      ],
      [
-      "WCAG 2.2",
-      "Checked on every page before publish"
+      "42",
+      "Components in the design system"
      ]
     ],
-    "finding": "Main finding: the hard part was never typing the words. It was knowing which site a change reaches, whether it is safe to publish, and how to get back if it is not."
+    "finding": "Main finding: editing words was never the hard part. The hard part was knowing which sites a change reaches, whether it is safe to go live, and how to get back if it is not."
    },
    "Audience": {
     "label": "03 — AUDIENCE",
     "name": "Audience",
-    "intro": "Three people use the same CMS for different jobs. Each one gets a part of the interface built around that job.",
+    "intro": "Three roles share one tool. Each gets a home screen built around what needs them today.",
     "personas": [
+     {
+      "name": "Product managers",
+      "texts": [
+       "PM",
+       "Product managers",
+       "“Is anything broken on a live site right now?”",
+       "NEEDS",
+       "One place that shows what needs them, across all sites.",
+       "→ Home · Needs you"
+      ]
+     },
      {
       "name": "Content editors",
       "texts": [
        "CE",
        "Content editors",
-       "“I just need to change one line.”",
+       "“I just need to change the prices.”",
        "NEEDS",
-       "Edit the words on the page itself, without a separate mode.",
-       "→ Inline editing"
+       "Edit the page as customers see it, with sections they can move.",
+       "→ Page designer"
       ]
      },
      {
-      "name": "Brand and partner managers",
+      "name": "Partner managers",
       "texts": [
-       "BM",
-       "Brand & partner managers",
-       "“Our partner wants their colour, not their own copy.”",
+       "PT",
+       "Partner managers",
+       "“Northwind wants its own colours, not its own pages.”",
        "NEEDS",
-       "Change only what differs and inherit the rest.",
-       "→ Partner layer"
-      ]
-     },
-     {
-      "name": "Developers",
-      "texts": [
-       "DV",
-       "Developers",
-       "“The CMS shouldn’t break my components.”",
-       "NEEDS",
-       "Components stay in code; the CMS only places them.",
-       "→ Components"
+       "A brand per partner that changes the look, never the content.",
+       "→ Sites · Brand"
       ]
      }
     ]
@@ -113,12 +113,12 @@
    "Journey map": {
     "label": "04 — JOURNEY MAP",
     "name": "Journey map",
-    "intro": "What an editor does, thinks and struggles with on the way from a request to a live change, and the design decision that answers it.",
+    "intro": "What a product team does, thinks and struggles with from a request to a live change, and the design decision that answers it.",
     "emotion": [
      60,
-     40,
+     45,
      70,
-     30,
+     35,
      85
     ],
     "curveH": 120,
@@ -127,50 +127,50 @@
       "label": "STAGE",
       "cells": [
        "Request",
-       "Find",
        "Edit",
        "Check",
-       "Publish"
+       "Sign off",
+       "Go live"
       ]
      },
      {
       "label": "DOING",
       "cells": [
-       "Gets a change from a partner",
-       "Looks for the page and the site",
-       "Changes the wording",
-       "Reviews before going live",
-       "Publishes and tells the team"
+       "Gets new autumn prices",
+       "Changes the Pricing page",
+       "Reviews before publishing",
+       "Asks a manager to approve",
+       "Publishes to partner sites"
       ]
      },
      {
       "label": "THINKING",
       "cells": [
-       "“Which sites does this affect?”",
-       "“Is this the right copy of the page?”",
-       "“Where is the edit mode?”",
+       "“Which sites does this touch?”",
+       "“Will this look right for every partner?”",
        "“Did I break anything?”",
-       "“What if I need to undo it?”"
+       "“Who has to approve this?”",
+       "“Can I undo it if it goes wrong?”"
       ]
      },
      {
       "label": "PAIN POINT",
       "cells": [
-       "Six copies of one page",
-       "No single source of truth",
-       "Forms far from the real page",
-       "Accessibility checked too late",
-       "No clear live version"
+       "Twelve copies of one page",
+       "Brand and content mixed together",
+       "Problems found by customers",
+       "Approvals over email",
+       "No record of what was live"
       ]
      },
      {
       "label": "DESIGN RESPONSE",
       "cells": [
-       "One page, sites as layers",
-       "Workspace switcher and page list",
-       "Inline text editing on the page",
-       "WCAG checks block publishing",
-       "Versions with a LIVE pointer"
+       "One page, sites as brands",
+       "Page designer with “For: All sites”",
+       "Checks that stop publishing",
+       "Sign-off inside Changes",
+       "Releases, roll back and History"
       ]
      }
     ]
@@ -178,49 +178,49 @@
    "Hypotheses": {
     "label": "05 — HYPOTHESES",
     "name": "Hypotheses",
-    "intro": "Six bets for the authoring app, each with the metric that will show whether it works.",
+    "intro": "Six bets behind the design, each with the metric that will show whether it works.",
     "setLabel": "❖ Hypothesis",
     "items": [
      [
       "H1",
-      "Editing text inline on the page is faster than a separate “edit wording” form.",
+      "A Home that lists only what needs you gets broken sites fixed faster than a dashboard of charts.",
       "METRIC",
-      "Time to change one line",
+      "Time from issue to fix",
       "High impact"
      ],
      [
       "H2",
-      "Showing where each value comes from (house, partner, tier) stops changes leaking between sites.",
+      "Showing “9 sites change, 3 stay” before publishing stops changes reaching the wrong partner.",
       "METRIC",
-      "Changes reverted for the wrong site",
+      "Rollbacks caused by wrong sites",
       "High impact"
      ],
      [
       "H3",
-      "Blocking publish on WCAG errors fixes issues before they reach any site.",
+      "Checks that stop publishing (links, headings, picture descriptions) catch problems before customers do.",
       "METRIC",
-      "Accessibility issues found after release",
+      "Issues found on live sites",
       "High impact"
      ],
      [
       "H4",
-      "A visible LIVE pointer and one-click rollback make editors publish more often.",
+      "Bundling drafts into one release with sign-off replaces approval by email.",
       "METRIC",
-      "Publishes per week, rollbacks used",
+      "Releases signed off inside Strata",
       "High impact"
      ],
      [
       "H5",
-      "Three clear names — Sections, Templates, Components — remove confusion about what can be edited.",
+      "Measuring a partner’s brand from its website gets a new site live without a designer.",
       "METRIC",
-      "Support questions about naming",
+      "Time to launch a partner site",
       "Medium impact"
      ],
      [
       "H6",
-      "About twenty brand inputs are enough to onboard a new partner without a designer.",
+      "Plain words — page, site, journey, release — make the tool usable without training.",
       "METRIC",
-      "Time to launch a partner site",
+      "Support questions in the first month",
       "Medium impact"
      ]
     ]
@@ -228,7 +228,7 @@
    "Prioritisation": {
     "label": "06 — PRIORITISATION",
     "name": "Prioritisation",
-    "intro": "Each bet placed by expected impact and the effort to build it. Versions and inheritance went first: everything else sits on top of them.",
+    "intro": "Each bet placed by expected impact and the effort to build it. Publishing, checks and releases went first: every other feature depends on them.",
     "w": 1000,
     "h": 520,
     "quads": [
@@ -297,19 +297,19 @@
     ]
    },
    "Visitor flow": {
-    "label": "07 — EDITOR FLOW",
+    "label": "07 — USER FLOWS",
     "name": "Visitor flow",
-    "intro": "From a request to a live change. Wording and layout take different paths but end in the same checks and the same publish."
+    "intro": "Seventeen flows are drawn screen by screen in the Figma file. This is the core one: edit a page, preview it as a customer, fix what stops publishing, check which sites change, go live, and roll back if needed. The words on each arrow are the button the user presses."
    },
    "Sitemap": {
     "label": "08 — SITEMAP",
     "name": "Sitemap",
-    "intro": "Each workspace holds its own pages, questions and journeys. Brand, sites, releases and history are shared across workspaces by design."
+    "intro": "After sign-in you pick a product, such as Home insurance. Every product has the same sections in the sidebar. Library and Sites are shared by all of its partner sites."
    },
    "Wireframes to UI": {
     "label": "09 — WIREFRAMES TO UI",
     "name": "Wireframes to UI",
-    "intro": "Low-fidelity layout first, agreed with the team, then the final interface in the petrol palette."
+    "intro": "The Home layout as a wireframe, then the final screen: what needs you on the left, changes and sites on the right."
    },
    "Solution": {
     "label": "10 — SOLUTION",
@@ -317,107 +317,107 @@
     "pins": [
      [
       "1",
-      45,
-      90
+      190,
+      62
      ],
      [
       "2",
-      230,
-      290
+      190,
+      222
      ],
      [
       "3",
-      420,
-      365
+      190,
+      480
      ],
      [
       "4",
-      548,
-      120
+      815,
+      8
      ],
      [
       "5",
-      548,
-      360
+      650,
+      90
      ],
      [
       "6",
-      905,
-      410
+      650,
+      170
      ]
     ],
     "notes": [
      [
       "1",
-      "Brand inputs",
-      "About twenty inputs per brand: colours, type, radius, logo. Everything else is derived."
+      "Reach before publishing",
+      "The review says how many sites change and which ones stay as they are, before anything goes live."
      ],
      [
       "2",
-      "Derived tokens",
-      "Each input generates a full ramp, so a partner gets a complete palette from one colour."
+      "Partner wording kept",
+      "If a partner has its own wording, the review shows it is kept, so a shared change never overwrites it."
      ],
      [
       "3",
-      "Measured contrast",
-      "Text-on-colour is measured, not typed, so there is nowhere to enter an unreadable pair."
+      "Checks passed",
+      "Links, headings and picture descriptions are checked on every publish."
      ],
      [
       "4",
-      "Publish checks",
-      "Heading order, alternative text, reachability and references — publishing waits until all pass."
+      "Things to fix",
+      "A counter in the editor shows what still needs attention before the page can go live."
      ],
      [
       "5",
-      "Reach before publish",
-      "Every change shows which sites it applies to before it goes live."
+      "Stops publishing",
+      "Some problems block the release, such as a section with no heading."
      ],
      [
       "6",
-      "Trade-off",
-      "Immutable versions mean more history to show. The LIVE pointer keeps it readable: one version is live, any other is one click away."
+      "Won’t stop publishing",
+      "Others are warnings. They stay visible, and an override needs a reason that is kept in History."
      ]
     ]
    },
    "Screens": {
     "label": "11 — SCREENS",
     "name": "Screens",
-    "intro": "Key screens of the authoring app, and one page rendered for four partner sites.",
+    "intro": "Key screens: the page designer, journeys, publishing, partner brands, releases, history and checks.",
     "shots": [
      {
       "label": [
-       "#  Page editor",
-       "1920 × 1080"
+       "#  Page designer",
+       "1440 × 900"
       ]
      },
      {
       "label": [
-       "#  Resolved content"
+       "#  Journey map"
       ]
      },
      {
       "label": [
-       "#  Versions"
+       "#  Publish review"
       ]
      },
      {
       "label": [
-       "#  Acme Homes"
+       "#  Site · Brand"
       ]
      },
      {
       "label": [
-       "#  Meridian"
+       "#  Release · Live"
       ]
      },
      {
       "label": [
-       "#  Northgate"
+       "#  History · What was live"
       ]
      },
      {
       "label": [
-       "#  Harbourline"
+       "#  Checks before publishing"
       ]
      }
     ]
@@ -435,31 +435,31 @@
       "STATUS"
      ],
      [
-      "Edit",
+      "Notice",
       "H1",
-      "Time to change one line",
-      "Under 1 minute",
+      "Time from issue to fix",
+      "Same day",
       "Tracked after launch"
      ],
      [
       "Reach",
       "H2",
-      "Changes reverted for the wrong site",
+      "Rollbacks caused by wrong sites",
       "Zero",
       "Tracked after launch"
      ],
      [
       "Quality",
       "H3",
-      "Accessibility issues found after release",
+      "Issues found on live sites",
       "Zero blocking issues",
       "Built into publish"
      ],
      [
-      "Confidence",
+      "Approval",
       "H4",
-      "Publishes per week, rollbacks used",
-      "Baseline after launch",
+      "Releases signed off inside Strata",
+      "All releases",
       "Tracked after launch"
      ],
      [
@@ -477,15 +477,17 @@
     "cols": [
      [
       "Where it is now",
-      "The authoring app is being built from these designs: the page editor, inheritance, brand tokens, versions and publish checks. Every flow was redrawn from the first sketches into one system in the petrol palette."
+      "All 17 flows are designed, from sign-in to journey analytics, on one design system. The CMS is being built from these screens."
      ],
      [
       "What I would do next",
-      "A Figma-to-Strata import, so a layout drawn in Figma lands in the editor as Sections and Templates. Then test inline editing with real editors and measure time to change one line."
+      "Test the publish review with real editors, then bring a partner’s brand into Figma as variables and back, so designers and Strata share one source."
      ]
     ]
    }
-  }
+  },
+  "flowImg": "/img/strata-flow.jpg",
+  "desktopShots": true
  },
  "inner-glow": {
   "slug": "inner-glow",

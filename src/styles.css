@@ -463,3 +463,9 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 body{-webkit-user-select:none;user-select:none}
 .contact-grid,.facts,.copy span:first-child,.menu-mail{-webkit-user-select:text;user-select:text}
 h1,h2,h3,.sel,.case-head,.next-case{cursor:default}
+
+.flow-img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line)}
+.flow-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:760px){.flow-img{width:1500px;max-width:none}}
+@media (min-width:761px){.cs .flow-scroll{margin-left:-300px;width:calc(100% + 300px)}}
+@media (min-width:761px){.diagram:has(.flow-scroll){overflow:visible;border:0;padding:0;background:none}.cs .flow-scroll{overflow:visible}}
