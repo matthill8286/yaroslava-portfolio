@@ -398,7 +398,7 @@ function caseStudy(slug, idx) {
 </header>
 <figure class="case-hero wrap">
   <figcaption class="pc-label"><span class="mono">${esc(c.heroLabel[0])}</span><span class="mono muted">${esc(c.heroLabel[1] || '')}</span></figcaption>
-  <video src="/video/${slug}.mp4" poster="/video/${slug}.jpg" autoplay muted loop playsinline preload="metadata" aria-label="${esc(c.title)} design showreel"></video>
+  <div class="vframe"><video src="/video/${slug}.mp4" poster="/video/${slug}.jpg" autoplay muted loop playsinline preload="metadata" aria-label="${esc(c.title)} design showreel"></video></div>
 </figure>
 <nav class="toc" aria-label="Case contents"><ol>${toc.map((t) => `<li><a href="#${ids[t]}" data-toc-link="${ids[t]}">${t}</a></li>`).join('')}</ol><span class="toc-bar"><i></i></span></nav>
 <div class="case wrap">${out.join('\n')}</div>

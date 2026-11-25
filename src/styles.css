@@ -216,7 +216,8 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 .meta dd{margin:0;font-size:15px}
 .meta a{color:var(--accent);text-decoration:none}.meta a:hover{text-decoration:underline}
 .case-hero{padding-bottom:140px}
-.case-hero video{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:0;background:var(--surface)}
+.case-hero .vframe{background:var(--surface);border:1px solid var(--line);padding:clamp(20px,5.5vw,88px) clamp(16px,7vw,120px)}
+.case-hero video{width:100%;max-width:1120px;margin:0 auto;aspect-ratio:16/9;object-fit:cover;border-radius:0;background:var(--surface);box-shadow:0 24px 60px rgba(17,17,17,.10)}
 .toc{position:sticky;top:84px;z-index:20;width:max-content;max-width:calc(100% - 32px);margin:0 auto -40px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:0;padding:6px 8px 9px;box-shadow:0 8px 30px rgba(17,17,17,.08)}
 .toc ol{list-style:none;margin:0;padding:0;display:flex;gap:2px}
 .toc a{display:block;padding:6px 12px;border-radius:0;font-size:13px;text-decoration:none;color:var(--ink-muted);white-space:nowrap}
