@@ -141,6 +141,12 @@ function home() {
 <section class="work-list wrap" aria-labelledby="sw">
   <div class="sec-head"><h2 id="sw" class="h-xl">Selected work <sup>(06)</sup></h2><span class="mono muted hide-m">Hover a project to preview ↘</span></div>
   <div class="rows" data-rows>${rows}<img class="preview" alt="" aria-hidden="true"></div>
+  <a class="side-work" href="/work/platon-suites/">
+    <span class="eyebrow">On the side · Brand &amp; print</span>
+    <span class="sw-t">Platon Suites <span class="muted">— a 36-page brochure for a boutique residence in Limassol</span></span>
+    <img src="/img/cover-platon-suites.jpg" alt="" loading="lazy">
+    <span class="sw-a" aria-hidden="true">↗</span>
+  </a>
 </section>
 
 <section class="about-me wrap">
@@ -195,22 +201,23 @@ const WORK = [
   ['dalitis', 'Andreas Dalitis & Sons', 'Website · 2026', 'Websites', 'Construction and property developer, Limassol, since 1983.'],
   ['thallo', 'Thallo Building', 'Website · 2026', 'Websites', 'Green office building in Larnaca, 2,068 m².'],
   ['pcela', 'Pcela Flower', 'E‑commerce · 2025', 'E‑commerce', 'Flower delivery in St. Petersburg in 90 minutes.'],
+  ['platon-suites', 'Platon Suites', 'Brand & print · 2026', 'Brand & print', '36-page A4 brochure for ten boutique residences in Neapolis, Limassol.'],
   ['property-one', 'Property One', 'Design system · 2024', 'Design systems', '30+ documented components with states and specs for handoff.', true],
   ['offlight', 'Offlight', 'Product', 'Product', 'Platform for creative talent: directory with filters, profiles and multi-step registration.', true],
   ['decaar', 'Decaar', 'E‑commerce · 2026', 'E‑commerce', '25+ page B2B skincare store with a partner area and consultation flow.', true],
   ['kamino', 'KAMINO', 'Website · 2026', 'Websites', 'Premium golf brand with craft-led product pages.', true],
 ];
 function work() {
-  const cats = ['All', 'Websites', 'E‑commerce', 'Product', 'Design systems'];
+  const cats = ['All', 'Websites', 'E‑commerce', 'Product', 'Design systems', 'Brand & print'];
   const count = (c) => (c === 'All' ? WORK.length : WORK.filter((w) => w[3] === c).length);
   const card = ([s, t, m, cat, d, soon]) => {
-    const inner = `<div class="pc-label"><span class="mono">#&nbsp; ${esc(t)}</span><span class="mono muted">${m}</span></div>
+    const inner = `<div class="pc-label"><span class="mono">#&nbsp; ${esc(t)}</span><span class="mono muted">${esc(m)}</span></div>
       <div class="pc-img"><img src="${img('cover-' + s)}" alt="${esc(t)} — cover" loading="lazy">${soon ? `<span class="soon">In progress · shown after release</span>` : ''}</div>
-      <div class="pc-title"><h3>${esc(t)}</h3><span class="chip ${soon ? 'chip-muted' : ''}">${soon ? 'Coming soon' : 'Case study'}</span></div>
+      <div class="pc-title"><h3>${esc(t)}</h3><span class="chip ${soon ? 'chip-muted' : ''}">${soon ? 'Coming soon' : (cat === 'Brand & print' ? 'Project' : 'Case study')}</span></div>
       <p class="muted">${esc(d)}</p>`;
     return soon
-      ? `<article class="pc is-soon" data-cat="${cat}">${inner}</article>`
-      : `<a class="pc" href="/work/${s}/" data-cat="${cat}">${inner}</a>`;
+      ? `<article class="pc is-soon" data-cat="${esc(cat)}">${inner}</article>`
+      : `<a class="pc" href="/work/${s}/" data-cat="${esc(cat)}">${inner}</a>`;
   };
   return layout({
     page: 'work',
@@ -219,10 +226,10 @@ function work() {
     body: `
 <section class="page-head wrap">
   <p class="mono muted">All projects · 2022 — 2026</p>
-  <h1 class="h-xxl">Work <sup>(10)</sup></h1>
+  <h1 class="h-xxl">Work <sup>(${WORK.length})</sup></h1>
 </section>
 <section class="wrap work-grid-wrap">
-  <div class="filters" role="toolbar" aria-label="Filter projects">${cats.map((c, i) => `<button class="filter" aria-pressed="${i === 0}" data-filter="${c}">${c} <span>${count(c)}</span></button>`).join('')}</div>
+  <div class="filters" role="toolbar" aria-label="Filter projects">${cats.map((c, i) => `<button class="filter" aria-pressed="${i === 0}" data-filter="${esc(c)}">${c} <span>${count(c)}</span></button>`).join('')}</div>
   <div class="grid" data-grid>${WORK.map(card).join('')}</div>
 </section>`,
   });
@@ -406,6 +413,47 @@ function caseStudy(slug, idx) {
   });
 }
 
+
+// ---------- side project: brand & print ----------
+function platon() {
+  const spreads = [
+    ['Cover', 'Name, place and one line on deep Platon green.'],
+    ['Location', 'Neapolis on a map, with walking and driving times.'],
+    ['Overview', 'Ten residences, and why the scale is kept small.'],
+    ['Residences by floor', 'A plan and a clear table for every unit.'],
+    ['Specification', 'Finishes and amenities, grouped so they scan fast.'],
+    ['Back cover', 'Contacts and a QR code straight to WhatsApp.'],
+  ];
+  const meta = [['CLIENT', 'Platon Properties'], ['ROLE', 'Layout · Art direction · Print prep'], ['FORMAT', 'A4 · 36 pages'], ['TYPE', 'Poppins + Pinyon Script'], ['PRINT', 'CMYK · perfect bound'], ['TOOLS', 'Figma']]
+    .map(([k, v]) => `<div><dt class="mono muted">${k}</dt><dd>${esc(v)}</dd></div>`).join('');
+  return layout({
+    page: 'work',
+    title: `Platon Suites brochure — ${SITE}`,
+    description: 'A 36-page A4 print brochure for Platon Suites, ten boutique residences in Neapolis, Limassol. A side project in brand and print.',
+    ogImage: '/img/cover-platon-suites.jpg',
+    body: `
+<header class="case-head wrap">
+  <div class="case-bar"><a class="mono" href="/work/">← All work</a><span class="mono muted">Side project · Brand &amp; print · 2026</span></div>
+  <h1 class="h-xxl">Platon Suites</h1>
+  <p class="case-intro">A print brochure that lets buyers picture living in ten homes that are not built yet.</p>
+  <dl class="meta">${meta}</dl>
+</header>
+<figure class="case-hero wrap">
+  <figcaption class="pc-label"><span class="mono"># Flip-through</span><span class="mono muted">20 spreads</span></figcaption>
+  <video src="/video/platon-suites.mp4" poster="/video/platon-suites.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Platon Suites brochure flip-through"></video>
+</figure>
+<section class="wrap side-text">
+  <div><p class="eyebrow">Brief</p><p>Platon Properties needed one brochure for ten off-plan residences: for sales meetings, for agents, and for buyers who are not in Cyprus yet.</p></div>
+  <div><p class="eyebrow">Approach</p><p>The area comes first, then the building, the homes and the people behind them. One deep green, spaced capitals and a single script word per page keep it calm, and warm renders do the selling.</p></div>
+  <div><p class="eyebrow">Delivered</p><p>A print-ready file in CMYK with bleed and crop marks, a perfect-bound cover with a 4.5 mm spine, and a screen PDF agents can send on WhatsApp.</p></div>
+</section>
+<section class="wrap spreads">
+  ${spreads.map(([t, d], i) => `<figure><img src="/img/platon-spread-${i + 1}.jpg" alt="Platon Suites brochure — ${esc(t)}" loading="lazy"><figcaption><span class="mono muted">${String(i + 1).padStart(2, '0')}</span> <b>${esc(t)}</b> <span class="muted">${esc(d)}</span></figcaption></figure>`).join('')}
+</section>
+<a class="next-case" href="/work/strata/"><span class="wrap"><span class="mono muted">Back to product work</span><span class="next-t">Strata <span aria-hidden="true">→</span></span></span></a>`,
+  });
+}
+
 // ---------- write ----------
 function write(rel, html) {
   const f = path.join(OUT, rel);
@@ -427,5 +475,6 @@ write('index.html', home());
 write('work/index.html', work());
 write('about/index.html', about());
 ORDER.forEach((s, i) => write(`work/${s}/index.html`, caseStudy(s, i)));
+write('work/platon-suites/index.html', platon());
 write('404.html', layout({ page: '404', title: `Not found — ${SITE}`, description: 'Page not found', body: `<section class="page-head wrap"><p class="mono muted">404</p><h1 class="h-xxl">This frame is empty.</h1><p><a class="link-arrow" href="/">Back home <span>→</span></a></p></section>` }));
 console.log('built', fs.readdirSync(OUT));
