@@ -478,7 +478,7 @@ function platon() {
 </header>
 <figure class="case-hero wrap">
   <figcaption class="pc-label"><span class="mono"># Flip-through</span><span class="mono muted">20 spreads</span></figcaption>
-  <video src="/video/platon-suites.mp4" poster="/video/platon-suites.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Platon Suites brochure flip-through"></video>
+  <div class="vframe"><video src="/video/platon-suites.mp4" poster="/video/platon-suites.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Platon Suites brochure flip-through"></video></div>
 </figure>
 <nav class="toc" aria-label="Case contents"><ol>${toc.map((t) => `<li><a href="#${ids[t]}" data-toc-link="${ids[t]}">${t}</a></li>`).join('')}</ol><span class="toc-bar"><i></i></span></nav>
 <div class="case wrap">${out.join('\n')}</div>
