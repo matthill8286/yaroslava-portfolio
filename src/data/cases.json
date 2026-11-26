@@ -1,4 +1,512 @@
 {
+ "harbour": {
+  "slug": "harbour",
+  "crumb": "Work / 01 — Harbour",
+  "eyebrow": "CASE 01 · PRODUCT DESIGN · LOGISTICS PLATFORM",
+  "title": "Harbour",
+  "intro": "A platform for car importers. Every job from collection abroad to handover in one place, live GPS on the way, and a portal in the importer's brand where the buyer follows their own car.",
+  "meta": [
+   [
+    "ROLE",
+    "Product Designer"
+   ],
+   [
+    "TEAM",
+    "IMPKT."
+   ],
+   [
+    "TYPE",
+    "Web app · mobile"
+   ],
+   [
+    "TIMELINE",
+    "2026 · built from scratch"
+   ],
+   [
+    "SCOPE",
+    "UX · UI · Design system"
+   ],
+   [
+    "SIZE",
+    "140+ screens · 11 flows"
+   ]
+  ],
+  "heroLabel": [
+   "#  Harbour · walkthrough",
+   "1440 × 900"
+  ],
+  "next": [
+   "NEXT CASE — 02",
+   "Strata"
+  ],
+  "desktopShots": true,
+  "flowImg": "/img/harbour-flow.jpg",
+  "sections": {
+   "Problem": {
+    "label": "01 — PROBLEM",
+    "text": "Importers bring cars to Cyprus from the UK, Japan and further away. One car passes through collection, registration, road legs, a ferry and customs, with a different partner at every step. Teams ran this on spreadsheets, WhatsApp and phone calls. Buyers called every few days to ask where their car was, GPS trackers sat in a drawer with no record of which car they were in, and costs only added up once the margin was already gone. No tool covered the whole journey: CRMs held the buyers, fleet trackers held the GPS, and nothing joined the two.",
+    "hmw": "How might we give an importer one place that shows where every car is and what needs doing today, and give the buyer the same answer without a phone call?",
+    "name": "Problem"
+   },
+   "Research": {
+    "label": "02 — SCOPE",
+    "stats": [
+     [
+      "140+",
+      "Screens, desktop and mobile, with every state"
+     ],
+     [
+      "11",
+      "User flows mapped in FigJam, from sign-in to handover"
+     ],
+     [
+      "20",
+      "Routes in the codebase, each matched to a screen"
+     ],
+     [
+      "2",
+      "Sides of one product: the business app and the buyer portal"
+     ]
+    ],
+    "finding": "Main finding: an owner's first question in the morning is not how many jobs there are, but which car needs them today and where it is. A buyer only asks where their car is and when they get it. Both answers come from the same two things: the job's stage and its tracker.",
+    "name": "Research"
+   },
+   "Audience": {
+    "label": "03 — AUDIENCE",
+    "intro": "One workspace, two roles. The owner runs the business side; the buyer sees only their own car, under the importer's brand.",
+    "personas": [
+     {
+      "name": "Owner at the desk",
+      "texts": [
+       "OW",
+       "Owner at the desk",
+       "“Which car needs me today?”",
+       "NEEDS",
+       "One board with what is late, what is arriving and which trackers went quiet.",
+       "→ Board · Live map"
+      ]
+     },
+     {
+      "name": "Owner on the road",
+      "texts": [
+       "OR",
+       "Owner on the road",
+       "“I’m at the depot with the car and a tracker.”",
+       "NEEDS",
+       "Mark the car collected, scan the tracker and take photos from a phone.",
+       "→ Mobile · Assign tracker"
+      ]
+     },
+     {
+      "name": "Buyer",
+      "texts": [
+       "BU",
+       "Buyer",
+       "“Where is my car right now?”",
+       "NEEDS",
+       "A clear stage, an expected date and photos, without calling anyone.",
+       "→ Portal · My vehicle"
+      ]
+     }
+    ],
+    "name": "Audience"
+   },
+   "Journey map": {
+    "label": "04 — JOURNEY MAP",
+    "intro": "One import from the owner's side: what they do, think and struggle with at each stage, and the design decision that answers it.",
+    "emotion": [
+     55,
+     78,
+     88,
+     70,
+     38
+    ],
+    "rows": [
+     {
+      "label": "STAGE",
+      "cells": [
+       "New job",
+       "Collection",
+       "On the road",
+       "Shipping",
+       "Handover"
+      ]
+     },
+     {
+      "label": "DOING",
+      "cells": [
+       "Adds the buyer and the car",
+       "Collects the car, fits a tracker",
+       "Follows legs and borders",
+       "Books the ferry and customs",
+       "Hands over the keys, closes the job"
+      ]
+     },
+     {
+      "label": "THINKING",
+      "cells": [
+       "“Have I added this buyer before?”",
+       "“Which tracker is in which car?”",
+       "“Is it moving? Is it late?”",
+       "“What has this cost me so far?”",
+       "“Did the buyer get every paper?”"
+      ]
+     },
+     {
+      "label": "PAIN POINT",
+      "cells": [
+       "Buyer details typed twice",
+       "Trackers noted on paper",
+       "Calls to drivers for a position",
+       "Costs in a separate spreadsheet",
+       "Daily “where is my car” calls"
+      ]
+     },
+     {
+      "label": "DESIGN RESPONSE",
+      "cells": [
+       "Three-step New job with buyer search",
+       "Assign tracker inside Mark collected, QR on mobile",
+       "Live map and GPS alerts on the Board",
+       "Money tab: costs, charges, margin",
+       "Portal: stage, live position, photos, documents"
+      ]
+     }
+    ],
+    "name": "Journey map"
+   },
+   "Hypotheses": {
+    "label": "05 — HYPOTHESES",
+    "intro": "Six bets behind the design, each with the metric that will show whether it works.",
+    "setLabel": "❖ Hypothesis",
+    "items": [
+     [
+      "H1",
+      "A Board that leads with late tasks, arrivals and GPS alerts gets problems handled the same day, faster than a list of every job.",
+      "METRIC",
+      "Overdue tasks per week",
+      "High impact"
+     ],
+     [
+      "H2",
+      "Assigning the tracker inside Mark collected means no car leaves without a tracker on record.",
+      "METRIC",
+      "Jobs in transit with no tracker",
+      "High impact"
+     ],
+     [
+      "H3",
+      "A branded portal with the stage, live position and photos cuts “where is my car” calls.",
+      "METRIC",
+      "Status calls per job",
+      "High impact"
+     ],
+     [
+      "H4",
+      "Routes with their own stages let one workspace run UK → Cyprus and Japan → Cyprus without workarounds.",
+      "METRIC",
+      "Jobs running on a second route",
+      "Medium impact"
+     ],
+     [
+      "H5",
+      "Costs and charges on the job show the margin before the car arrives, not after.",
+      "METRIC",
+      "Jobs with costs entered before handover",
+      "Medium impact"
+     ],
+     [
+      "H6",
+      "A phone version with QR scanning lets the owner record a collection on site instead of later at a desk.",
+      "METRIC",
+      "Collections marked from a phone",
+      "Medium impact"
+     ]
+    ],
+    "name": "Hypotheses"
+   },
+   "Prioritisation": {
+    "label": "06 — PRIORITISATION",
+    "intro": "Each bet placed by expected impact and the effort to build it. The Board, tracker assignment and the portal went first: they answer the two questions everyone asks.",
+    "w": 1000,
+    "h": 520,
+    "quads": [
+     [
+      "QUICK WINS",
+      16,
+      14
+     ],
+     [
+      "BIG BETS",
+      516,
+      14
+     ],
+     [
+      "NICE TO HAVE",
+      16,
+      274
+     ],
+     [
+      "LATER",
+      516,
+      274
+     ],
+     [
+      "EFFORT →",
+      937,
+      500
+     ],
+     [
+      "IMPACT ↑",
+      937,
+      14
+     ]
+    ],
+    "chips": [
+     [
+      "H1",
+      260,
+      70
+     ],
+     [
+      "H2",
+      200,
+      170
+     ],
+     [
+      "H3",
+      640,
+      90
+     ],
+     [
+      "H4",
+      720,
+      330
+     ],
+     [
+      "H5",
+      260,
+      330
+     ],
+     [
+      "H6",
+      620,
+      200
+     ]
+    ],
+    "name": "Prioritisation"
+   },
+   "Visitor flow": {
+    "label": "07 — USER FLOWS",
+    "intro": "Eleven flows are drawn in FigJam and matched to screens. This is the core one: open a job, collect the car with a tracker, follow it on the map, move it through the route's stages and hand it over, while the buyer sees each step in the portal. The words on each arrow are the button the user presses.",
+    "name": "Visitor flow"
+   },
+   "Sitemap": {
+    "label": "08 — SITEMAP",
+    "intro": "The owner's app has six places in the sidebar; everything about one car lives in the job workspace, in six tabs. The buyer portal is a separate, much smaller app under the importer's brand.",
+    "name": "Sitemap"
+   },
+   "Wireframes to UI": {
+    "label": "09 — WIREFRAMES TO UI",
+    "name": "Wireframes to UI",
+    "intro": "The Board as a wireframe first, agreed with the team before any colour, then the final screen: what needs the owner today at the top, the next arriving car and GPS alerts on the same screen."
+   },
+   "Solution": {
+    "label": "10 — SOLUTION",
+    "pins": [],
+    "notes": [
+     [
+      "1",
+      "Tracker on record",
+      "Each job shows its tracker, who assigned it and when. The IMEI never reaches the buyer."
+     ],
+     [
+      "2",
+      "Planned and driven",
+      "A dotted line for the planned corridor, a solid one for where the car has actually been."
+     ],
+     [
+      "3",
+      "One next step",
+      "The status bar names the stage and offers one button for the next one: Move to At Greece."
+     ],
+     [
+      "4",
+      "The same journey for the buyer",
+      "The portal shows the route's stages in plain words, with the current leg highlighted."
+     ],
+     [
+      "5",
+      "A date up front",
+      "The expected arrival is the first thing the buyer reads, above the car."
+     ],
+     [
+      "6",
+      "Only what is shared",
+      "Photos, documents and updates appear only when the owner marks them visible."
+     ]
+    ],
+    "name": "Solution",
+    "pinsPct": [
+     [
+      "1",
+      0,
+      61.3,
+      37.0
+     ],
+     [
+      "2",
+      0,
+      14.7,
+      68.8
+     ],
+     [
+      "3",
+      0,
+      78.7,
+      24.3
+     ],
+     [
+      "4",
+      1,
+      54.1,
+      60.8
+     ],
+     [
+      "5",
+      1,
+      15.9,
+      34.4
+     ],
+     [
+      "6",
+      1,
+      66.4,
+      80.6
+     ]
+    ]
+   },
+   "Screens": {
+    "label": "11 — SCREENS",
+    "intro": "Key screens: the Board, the job workspace, the live map, a new job, money, routes and the buyer portal.",
+    "shots": [
+     {
+      "label": [
+       "#  Job workspace · Overview",
+       "1440 × 976"
+      ]
+     },
+     {
+      "label": [
+       "#  Live map"
+      ]
+     },
+     {
+      "label": [
+       "#  New job · Vehicle"
+      ]
+     },
+     {
+      "label": [
+       "#  Job · Money"
+      ]
+     },
+     {
+      "label": [
+       "#  Workspace · Routes and stages"
+      ]
+     },
+     {
+      "label": [
+       "#  Buyer portal · Ready to collect"
+      ]
+     },
+     {
+      "label": [
+       "#  Customer record · Portal active"
+      ]
+     }
+    ],
+    "name": "Screens"
+   },
+   "Mobile": {
+    "label": "12 — MOBILE",
+    "intro": "The owner's phone version: a dark header, content on a light sheet and a floating tab bar. Collection, tracker QR scan and photos happen where the car is.",
+    "name": "Mobile",
+    "img": "/img/harbour-mobile.jpg"
+   },
+   "What we measure": {
+    "label": "13 — WHAT WE MEASURE",
+    "intro": "Six hypotheses across the journey. Targets are set before launch and tracked once the first importers are on the new version.",
+    "table": [
+     [
+      "STAGE",
+      "HYP.",
+      "METRIC",
+      "TARGET",
+      "STATUS"
+     ],
+     [
+      "Every day",
+      "H1",
+      "Overdue tasks per week",
+      "Under 3",
+      "Tracked after launch"
+     ],
+     [
+      "Collection",
+      "H2",
+      "Jobs in transit with no tracker",
+      "Zero",
+      "Built into Mark collected"
+     ],
+     [
+      "In transit",
+      "H3",
+      "Status calls per job",
+      "Half of today",
+      "Tracked after launch"
+     ],
+     [
+      "Routes",
+      "H4",
+      "Jobs running on a second route",
+      "Any, with no workaround",
+      "Tracked after launch"
+     ],
+     [
+      "Money",
+      "H5",
+      "Costs entered before handover",
+      "9 in 10 jobs",
+      "Tracked after launch"
+     ],
+     [
+      "On site",
+      "H6",
+      "Collections marked from a phone",
+      "Most collections",
+      "Tracked after launch"
+     ]
+    ],
+    "name": "What we measure"
+   },
+   "Results": {
+    "label": "14 — RESULTS",
+    "cols": [
+     [
+      "Where it is now",
+      "140+ screens for the business app, the buyer portal and sign-in, on desktop and mobile, built on one set of tokens and components. Every screen is matched to its route in the code, so the team builds straight from the file."
+     ],
+     [
+      "What I would do next",
+      "Test the portal with buyers on one live route and compare status calls before and after. Then design notifications, once we know which updates buyers actually want."
+     ]
+    ],
+    "name": "Results"
+   }
+  }
+ },
  "strata": {
   "slug": "strata",
   "crumb": "Work / 01 — Strata",

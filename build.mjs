@@ -8,7 +8,7 @@ const OUT = path.join(ROOT, 'dist');
 const cases = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/cases.json'), 'utf8'));
 const diagrams = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/diagrams.json'), 'utf8'));
 
-const ORDER = ['strata', 'inner-glow', 'jbc', 'dalitis', 'thallo', 'pcela'];
+const ORDER = ['harbour', 'strata', 'inner-glow', 'jbc', 'dalitis', 'thallo', 'pcela'];
 const SITE = 'Yaroslava Dzihim';
 const EMAIL = 'yaroslavadzihim@gmail.com';
 const CV = '/Yaroslava_Dzihim_CV.pdf';
@@ -107,7 +107,7 @@ function contact() {
 function home() {
   const rows = ORDER.map((s, i) => {
     const c = cases[s];
-    const kind = { strata: 'Product · 2026', 'inner-glow': 'App · 2026', pcela: 'E‑commerce · 2025' }[s] || 'Website · 2026';
+    const kind = { harbour: 'Web app · 2026', strata: 'Product · 2026', 'inner-glow': 'App · 2026', pcela: 'E‑commerce · 2025' }[s] || 'Website · 2026';
     return `<a class="row" href="/work/${s}/" data-preview="${img('cover-' + s)}">
       <span class="row-i">${String(i + 1).padStart(2, '0')}</span>
       <span class="row-t">${esc(c.title)}</span>
@@ -139,7 +139,7 @@ function home() {
 </section>
 
 <section class="work-list wrap" aria-labelledby="sw">
-  <div class="sec-head"><h2 id="sw" class="h-xl">Selected work <sup>(06)</sup></h2><span class="mono muted hide-m">Hover a project to preview ↘</span></div>
+  <div class="sec-head"><h2 id="sw" class="h-xl">Selected work <sup>(${String(ORDER.length).padStart(2, '0')})</sup></h2><span class="mono muted hide-m">Hover a project to preview ↘</span></div>
   <div class="rows" data-rows>${rows}<img class="preview" alt="" aria-hidden="true"></div>
   <a class="side-work" href="/work/platon-suites/">
     <span class="eyebrow">On the side · Brand &amp; print</span>
@@ -195,6 +195,7 @@ function home() {
 
 // ---------- work ----------
 const WORK = [
+  ['harbour', 'Harbour', 'Web app · 2026', 'Product', 'Platform for car importers: every job, live GPS and a buyer portal. 140+ screens, built from scratch.'],
   ['strata', 'Strata', 'Product · 2026', 'Product', 'Site builder and CMS for companies that run many sites: one brand, one set of words, a full audit trail.'],
   ['inner-glow', 'Inner Glow AI', 'App · 2026', 'Product', 'Mental health app with an AI companion. 200+ screens, from research to a design system.'],
   ['jbc', 'JBC Projects', 'Website · 2026', 'Websites', 'Stadium and arena consultancy, London & Cardiff.'],
@@ -329,7 +330,9 @@ function sec(id, label, inner, extra = '') {
   return `<section class="cs" id="${id}" ${extra}><p class="cs-label mono">${esc(label)}</p><div class="cs-body">${inner}</div></section>`;
 }
 function caseStudy(slug, idx) {
-  const c = cases[slug], S = c.sections, D = diagrams[slug];
+  const c0 = cases[slug], S = c0.sections, D = diagrams[slug];
+  const nn = String(idx + 1).padStart(2, '0'), nn2 = String(((idx + 1) % ORDER.length) + 1).padStart(2, '0');
+  const c = { ...c0, crumb: `Work / ${nn} — ${c0.title}`, eyebrow: c0.eyebrow.replace(/^CASE \d\d/, 'CASE ' + nn), next: [`NEXT CASE — ${nn2}`, ...(c0.next || []).slice(1)] };
   const next = cases[ORDER[(idx + 1) % ORDER.length]];
   const nextSlug = ORDER[(idx + 1) % ORDER.length];
   const out = [];
@@ -373,13 +376,16 @@ function caseStudy(slug, idx) {
   out.push(sec('wireframes', Wf.label, `<p class="intro">${esc(Wf.intro)}</p><div class="pair"><figure><figcaption class="mono">#&nbsp; Wireframe</figcaption>${wireSVG(D.wire)}</figure><span class="pair-arrow" aria-hidden="true">→</span><figure><figcaption class="mono">#&nbsp; Final UI</figcaption><img src="${img(slug + '-ui')}" alt="${esc(c.title)} final UI" loading="lazy"></figure></div>`));
   // Solution
   const So = S['Solution'];
-  const pinsFor = (k) => So.pins.filter(([, x]) => (k === 0 ? x < 508 : x >= 508)).map(([n, x, y]) => `<span class="pin" style="left:${(((k ? x - 508 : x) + 15) / 492) * 100}%;top:${((y + 15) / 620) * 100}%">${esc(n)}</span>`).join('');
+  const pinsFor = (k) => So.pinsPct ? So.pinsPct.filter((p) => p[1] === k).map(([n, , x, y]) => `<span class="pin" style="left:${x}%;top:${y}%">${esc(n)}</span>`).join('') : So.pins.filter(([, x]) => (k === 0 ? x < 508 : x >= 508)).map(([n, x, y]) => `<span class="pin" style="left:${(((k ? x - 508 : x) + 15) / 492) * 100}%;top:${((y + 15) / 620) * 100}%">${esc(n)}</span>`).join('');
   out.push(sec('solution', So.label, `<div class="sol-imgs">${['a', 'b'].map((k, i) => `<figure class="sol-img"><img src="${img(slug + '-sol-' + k)}" alt="${esc(c.title)} solution screens ${i + 1}" loading="lazy">${pinsFor(i)}</figure>`).join('')}</div><ol class="notes">${So.notes.map(([n, t, d]) => `<li><span class="pin pin-static">${esc(n)}</span><div><h3>${esc(t)}</h3><p class="muted">${esc(d)}</p></div></li>`).join('')}</ol>`, 'data-toc="Solution"'));
   // Screens
   const Sc = S['Screens'];
   const shots = Sc.shots.map((s, i) => ({ ...s, file: img(`${slug}-shot-${i + 1}`) }));
   const fig = (s, cls) => `<figure class="shot ${cls}"><figcaption class="pc-label"><span class="mono">${esc(s.label[0])}</span>${s.label[1] ? `<span class="mono muted">${esc(s.label[1])}</span>` : ''}</figcaption><img src="${s.file}" alt="${esc(s.label[0].replace('#', '').trim())}" loading="lazy"></figure>`;
   out.push(sec('screens', Sc.label, `<p class="intro">${esc(Sc.intro)}</p><div class="shots">${fig(shots[0], 'wide')}<div class="shots-2">${fig(shots[1], '')}${fig(shots[2], '')}</div>${c.desktopShots ? `<div class="shots-2">${shots.slice(3, 5).map((s) => fig(s, '')).join('')}</div><div class="shots-2">${shots.slice(5, 7).map((s) => fig(s, '')).join('')}</div>` : `<div class="shots-4">${shots.slice(3).map((s) => fig(s, 'mob')).join('')}</div>`}</div>`));
+  // Mobile (optional)
+  const Mo = S['Mobile'];
+  if (Mo) out.push(sec('mobile', Mo.label, `<p class="intro">${esc(Mo.intro)}</p><figure class="shot"><figcaption class="pc-label"><span class="mono">#&nbsp; Owner app · phone</span><span class="mono muted">390 × 844</span></figcaption><img src="${Mo.img}" alt="${esc(c.title)} mobile screens" loading="lazy"></figure>`));
   // Measure
   const Me = S['What we measure'];
   const [head, ...rows] = Me.table;
