@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 // Static site generator for Yaroslava Dzihim's portfolio. No dependencies.
 // node build.mjs  ->  dist/
 import fs from 'node:fs';
@@ -493,7 +494,20 @@ function platon() {
 }
 
 // ---------- write ----------
+// Images and videos are cached for a year, so every URL carries a hash of the file:
+// when a file changes, its URL changes and browsers fetch the new one.
+const _ver = {};
+function bust(html) {
+  return html.replace(/(["'(])(\/(?:img|video)\/[^"')?\s]+)(?=["')])/g, (m, q, u) => {
+    if (!(u in _ver)) {
+      const fp = path.join(ROOT, 'public', u);
+      _ver[u] = fs.existsSync(fp) ? crypto.createHash('md5').update(fs.readFileSync(fp)).digest('hex').slice(0, 8) : '';
+    }
+    return _ver[u] ? `${q}${u}?v=${_ver[u]}` : m;
+  });
+}
 function write(rel, html) {
+  html = bust(html);
   const f = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(f), { recursive: true });
   fs.writeFileSync(f, html);
