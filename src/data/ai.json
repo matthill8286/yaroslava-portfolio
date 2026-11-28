@@ -2,89 +2,465 @@
   "harbour": {
     "intro": "Harbour is big: 140+ screens and 11 flows, built from scratch. AI did the slow first drafts, so my time went on the decisions.",
     "steps": [
-      ["Research", ["Claude", "Perplexity"], "Read import rules, ferry schedules and 30+ competitor pages, and turned my interview notes into themes and quotes I could check."],
-      ["Flows", ["FigJam AI", "Claude"], "Drafted the 11 flows from the job stages. I checked every branch against how importers really work and cut half of the steps."],
-      ["Prototype", ["Figma Make"], "A clickable job workspace and live map in a day, so importers could react to something real before I drew a single final screen."],
-      ["Screens & data", ["Claude", "Figma AI"], "Realistic VINs, routes, invoices and empty, error and loading states for every table, so no screen shipped with lorem ipsum."]
+      [
+        "Research",
+        [
+          "Claude",
+          "Perplexity"
+        ],
+        "Read import rules, ferry schedules and 30+ competitor pages, and turned my interview notes into themes and quotes I could check."
+      ],
+      [
+        "Flows",
+        [
+          "FigJam AI",
+          "Claude"
+        ],
+        "Drafted the 11 flows from the job stages. I checked every branch against how importers really work and cut half of the steps."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A clickable job workspace and live map in a day, so importers could react to something real before I drew a single final screen."
+      ],
+      [
+        "Screens & data",
+        [
+          "Claude",
+          "Figma AI"
+        ],
+        "Realistic VINs, routes, invoices and empty, error and loading states for every table, so no screen shipped with lorem ipsum."
+      ]
     ],
-    "speed": [["Research synthesis", 5, 2], ["Flows & sitemap", 4, 1.5], ["First prototype", 6, 1], ["Content & edge states", 5, 2]],
-    "rule": "AI drafts, I decide. Every flow, number and label was checked against real jobs before it went into the design."
+    "speed": [
+      [
+        "Research synthesis",
+        5,
+        2.5
+      ],
+      [
+        "Flows & sitemap",
+        4,
+        2
+      ],
+      [
+        "First prototype",
+        6,
+        1.5
+      ],
+      [
+        "Content & edge states",
+        5,
+        2.5
+      ]
+    ],
+    "rule": "Every flow, number and label was checked against real import jobs before it reached a screen. The model wrote drafts; the calls were mine."
   },
   "strata": {
     "intro": "Strata has 244 screens across many sites. AI took the repetitive work, so I could spend time on the content model and the publish flow.",
     "steps": [
-      ["Research", ["Claude", "Perplexity"], "Compared how 20+ CMS tools handle shared content and summarised interview notes into pains and quotes."],
-      ["Content model", ["Claude"], "Drafted page types, fields and inheritance rules. I tested each one against real partner sites and kept the ones that held."],
-      ["Prototype", ["Figma Make"], "A working publish-to-many-sites prototype in a day, used in the first round of user calls."],
-      ["Screens & states", ["Figma AI", "Claude"], "Generated realistic page lists, site names and every empty, error and conflict state for 244 screens."]
+      [
+        "Research",
+        [
+          "Claude",
+          "Perplexity"
+        ],
+        "Compared how 20+ CMS tools handle shared content and summarised interview notes into pains and quotes."
+      ],
+      [
+        "Content model",
+        [
+          "Claude"
+        ],
+        "Drafted page types, fields and inheritance rules. I tested each one against real partner sites and kept the ones that held."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A working publish-to-many-sites prototype in a day, used in the first round of user calls."
+      ],
+      [
+        "Screens & states",
+        [
+          "Figma AI",
+          "Claude"
+        ],
+        "Generated realistic page lists, site names and every empty, error and conflict state for 244 screens."
+      ]
     ],
-    "speed": [["Research synthesis", 5, 2], ["Content model", 4, 1.5], ["First prototype", 5, 1], ["Content & edge states", 6, 2]],
-    "rule": "AI drafts, I decide. The content model and every rule about what a site can override were checked with the team."
+    "speed": [
+      [
+        "Research synthesis",
+        6,
+        3.5
+      ],
+      [
+        "Content model",
+        5,
+        3
+      ],
+      [
+        "First prototype",
+        5,
+        2
+      ],
+      [
+        "Content & edge states",
+        6,
+        3.5
+      ]
+    ],
+    "rule": "The content model was never left to a model. Each rule about what a site can override was argued out with the developers."
   },
   "inner-glow": {
     "intro": "Inner Glow is an AI product, so I used AI to design it too: to research, to write the coach's voice and to test it early.",
     "steps": [
-      ["Research", ["Claude", "Perplexity"], "Reviewed mood-tracker reviews and studies on habit drop-off, and grouped them into the reasons people stop after a week."],
-      ["Coach voice", ["Claude"], "Wrote and tested dozens of coach replies to set the tone: warm, short, never clinical. The best ones became the content guide."],
-      ["Prototype", ["Figma Make"], "A clickable check-in and insight flow in a day, tested with five people before the final design."],
-      ["Screens & content", ["Figma AI", "Midjourney"], "Drafted mood copy, insight cards and calm background art, then refined it by hand to match the brand."]
+      [
+        "Research",
+        [
+          "Claude",
+          "Perplexity"
+        ],
+        "Reviewed mood-tracker reviews and studies on habit drop-off, and grouped them into the reasons people stop after a week."
+      ],
+      [
+        "Coach voice",
+        [
+          "Claude"
+        ],
+        "Wrote and tested dozens of coach replies to set the tone: warm, short, never clinical. The best ones became the content guide."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A clickable check-in and insight flow in a day, tested with five people before the final design."
+      ],
+      [
+        "Screens & content",
+        [
+          "Figma AI",
+          "Midjourney"
+        ],
+        "Drafted mood copy, insight cards and calm background art, then refined it by hand to match the brand."
+      ]
     ],
-    "speed": [["Research synthesis", 4, 1.5], ["Coach voice & copy", 5, 1.5], ["First prototype", 4, 1], ["Visuals & states", 4, 2]],
-    "rule": "AI drafts, I decide. Nothing that sounds like advice went in without a check against what the product can safely say."
+    "speed": [
+      [
+        "Research synthesis",
+        4,
+        1.5
+      ],
+      [
+        "Coach voice & copy",
+        5,
+        2
+      ],
+      [
+        "First prototype",
+        4,
+        1
+      ],
+      [
+        "Visuals & states",
+        4,
+        2
+      ]
+    ],
+    "rule": "In a mental-health app, tone is the product. Every line the coach says was read by a person and checked against what the app can safely say."
   },
   "jbc": {
     "intro": "JBC sells long, high-value projects. AI helped me understand the audience fast and get the project pages right before design.",
     "steps": [
-      ["Research", ["Perplexity", "Claude"], "Studied how 25+ venue and fit-out firms present their work, and what investors look for before they call."],
-      ["Structure", ["Claude", "Relume"], "Drafted the sitemap and the case page outline. I reworked it around proof first: scale, timeline, results."],
-      ["Prototype", ["Figma Make"], "A clickable project page in a day, so the client could react to the story before the visuals."],
-      ["Copy & states", ["Claude"], "Drafted project summaries from the client's notes, then edited them down to plain, short lines."]
+      [
+        "Research",
+        [
+          "Perplexity",
+          "Claude"
+        ],
+        "Studied how 25+ venue and fit-out firms present their work, and what investors look for before they call."
+      ],
+      [
+        "Structure",
+        [
+          "Claude",
+          "Relume"
+        ],
+        "Drafted the sitemap and the case page outline. I reworked it around proof first: scale, timeline, results."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A clickable project page in a day, so the client could react to the story before the visuals."
+      ],
+      [
+        "Copy & states",
+        [
+          "Claude"
+        ],
+        "Drafted project summaries from the client's notes, then edited them down to plain, short lines."
+      ]
     ],
-    "speed": [["Market research", 4, 1.5], ["Sitemap & outline", 3, 1], ["First prototype", 4, 1], ["Copy drafts", 4, 1.5]],
-    "rule": "AI drafts, I decide. Every project fact and figure was checked with the JBC team before launch."
+    "speed": [
+      [
+        "Market research",
+        4,
+        2.5
+      ],
+      [
+        "Sitemap & outline",
+        3,
+        2
+      ],
+      [
+        "First prototype",
+        4,
+        1.5
+      ],
+      [
+        "Copy drafts",
+        4,
+        2.5
+      ]
+    ],
+    "rule": "Investors check the facts, so I did too: every project figure, date and client name came from JBC, not from a prompt."
   },
   "dalitis": {
     "intro": "Dalitis has three audiences and many listings. AI helped me sort the audience, structure the listings and write clear copy.",
     "steps": [
-      ["Research", ["Perplexity", "Claude"], "Compared 20+ Cyprus developer sites and grouped what homebuyers, investors and businesses each look for first."],
-      ["Structure", ["Claude", "Relume"], "Drafted the sitemap and listing filters. I tested them against the real portfolio and merged what overlapped."],
-      ["Prototype", ["Figma Make"], "A clickable listings and project page in a day, reviewed with the sales team."],
-      ["Copy & content", ["Claude"], "Turned long project notes into short listing descriptions in one tone, then edited them by hand."]
+      [
+        "Research",
+        [
+          "Perplexity",
+          "Claude"
+        ],
+        "Compared 20+ Cyprus developer sites and grouped what homebuyers, investors and businesses each look for first."
+      ],
+      [
+        "Structure",
+        [
+          "Claude",
+          "Relume"
+        ],
+        "Drafted the sitemap and listing filters. I tested them against the real portfolio and merged what overlapped."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A clickable listings and project page in a day, reviewed with the sales team."
+      ],
+      [
+        "Copy & content",
+        [
+          "Claude"
+        ],
+        "Turned long project notes into short listing descriptions in one tone, then edited them by hand."
+      ]
     ],
-    "speed": [["Market research", 4, 1.5], ["Sitemap & filters", 3, 1], ["First prototype", 4, 1], ["Listing copy", 5, 1.5]],
-    "rule": "AI drafts, I decide. Prices, sizes and availability always came from the client's data, never from a model."
+    "speed": [
+      [
+        "Market research",
+        4,
+        2
+      ],
+      [
+        "Sitemap & filters",
+        3,
+        2
+      ],
+      [
+        "First prototype",
+        4,
+        1.5
+      ],
+      [
+        "Listing copy",
+        6,
+        2.5
+      ]
+    ],
+    "rule": "Prices, sizes and availability come straight from the client’s data. AI helped me write about the homes, never decide what they cost."
   },
   "thallo": {
     "intro": "Thallo was not built yet, so the site had to sell a picture. AI helped me research tenants and show the space before it existed.",
     "steps": [
-      ["Research", ["Perplexity", "Claude"], "Looked at how office buildings in Limassol and abroad are let, and what companies ask before a viewing."],
-      ["Structure", ["Claude"], "Drafted the page story: location, floors, specs, contact. I reordered it around the questions tenants ask first."],
-      ["Prototype", ["Figma Make"], "A clickable floor-picker in a day, so the agents could try it before the final design."],
-      ["Visuals & copy", ["Midjourney", "Claude"], "Mood images for the lobby and terraces to set the direction, plus short spec copy. Final images came from the architect's renders."]
+      [
+        "Research",
+        [
+          "Perplexity",
+          "Claude"
+        ],
+        "Looked at how office buildings in Limassol and abroad are let, and what companies ask before a viewing."
+      ],
+      [
+        "Structure",
+        [
+          "Claude"
+        ],
+        "Drafted the page story: location, floors, specs, contact. I reordered it around the questions tenants ask first."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A clickable floor-picker in a day, so the agents could try it before the final design."
+      ],
+      [
+        "Visuals & copy",
+        [
+          "Midjourney",
+          "Claude"
+        ],
+        "Mood images for the lobby and terraces to set the direction, plus short spec copy. Final images came from the architect's renders."
+      ]
     ],
-    "speed": [["Market research", 4, 1.5], ["Page story", 3, 1], ["First prototype", 4, 1], ["Mood visuals & copy", 5, 2]],
-    "rule": "AI drafts, I decide. AI images were only for direction; the site shows the architect's real renders and plans."
+    "speed": [
+      [
+        "Market research",
+        4,
+        3
+      ],
+      [
+        "Page story",
+        3,
+        2
+      ],
+      [
+        "First prototype",
+        4,
+        2
+      ],
+      [
+        "Mood visuals & copy",
+        5,
+        3.5
+      ]
+    ],
+    "rule": "AI images showed the mood, not the building. On the live site every view is the architect’s real render or plan."
   },
   "pcela": {
     "intro": "Pcela is about speed for the buyer, so I used AI to move fast too: research, checkout flow and product copy.",
     "steps": [
-      ["Research", ["Perplexity", "Claude"], "Reviewed 20+ flower shops and 200+ customer reviews, and grouped the reasons people drop out of checkout."],
-      ["Flow", ["Claude", "FigJam AI"], "Drafted the bouquet-to-checkout flow. I cut it down to three steps on mobile."],
-      ["Prototype", ["Figma Make"], "A clickable mobile checkout in a day, tested with five people on their own phones."],
-      ["Copy & states", ["Claude"], "Wrote bouquet names, short descriptions and every delivery and error message, then edited them for tone."]
+      [
+        "Research",
+        [
+          "Perplexity",
+          "Claude"
+        ],
+        "Reviewed 20+ flower shops and 200+ customer reviews, and grouped the reasons people drop out of checkout."
+      ],
+      [
+        "Flow",
+        [
+          "Claude",
+          "FigJam AI"
+        ],
+        "Drafted the bouquet-to-checkout flow. I cut it down to three steps on mobile."
+      ],
+      [
+        "Prototype",
+        [
+          "Figma Make"
+        ],
+        "A clickable mobile checkout in a day, tested with five people on their own phones."
+      ],
+      [
+        "Copy & states",
+        [
+          "Claude"
+        ],
+        "Wrote bouquet names, short descriptions and every delivery and error message, then edited them for tone."
+      ]
     ],
-    "speed": [["Research synthesis", 4, 1.5], ["Checkout flow", 3, 1], ["First prototype", 4, 1], ["Product copy & states", 5, 1.5]],
-    "rule": "AI drafts, I decide. Prices, delivery times and slots came from the shop's own rules."
+    "speed": [
+      [
+        "Research synthesis",
+        4,
+        2
+      ],
+      [
+        "Checkout flow",
+        3,
+        1.5
+      ],
+      [
+        "First prototype",
+        4,
+        1.5
+      ],
+      [
+        "Product copy & states",
+        5,
+        3
+      ]
+    ],
+    "rule": "Faster for me, never at the buyer’s cost: delivery times, slots and prices follow the shop’s own rules."
   },
   "platon-suites": {
     "intro": "A 36-page print brochure has a lot of words and many pages to lay out. AI helped with research, copy and early directions.",
     "steps": [
-      ["Research", ["Perplexity", "Claude"], "Studied how off-plan homes in Limassol are sold and what buyers ask before they reserve."],
-      ["Structure", ["Claude"], "Drafted the 36-page story and the page plan. I reworked it to open with the area, then the homes."],
-      ["Directions", ["Midjourney"], "Early mood images for the moodboard and the first direction. The final brochure uses the real renders."],
-      ["Copy", ["Claude"], "Drafted text for every spread from the developer's notes, then edited it down to short lines in one tone."]
+      [
+        "Research",
+        [
+          "Perplexity",
+          "Claude"
+        ],
+        "Studied how off-plan homes in Limassol are sold and what buyers ask before they reserve."
+      ],
+      [
+        "Structure",
+        [
+          "Claude"
+        ],
+        "Drafted the 36-page story and the page plan. I reworked it to open with the area, then the homes."
+      ],
+      [
+        "Directions",
+        [
+          "Midjourney"
+        ],
+        "Early mood images for the moodboard and the first direction. The final brochure uses the real renders."
+      ],
+      [
+        "Copy",
+        [
+          "Claude"
+        ],
+        "Drafted text for every spread from the developer's notes, then edited it down to short lines in one tone."
+      ]
     ],
-    "speed": [["Market research", 4, 1.5], ["Page plan", 3, 1], ["Moodboard", 3, 1], ["Brochure copy", 6, 2]],
-    "rule": "AI drafts, I decide. Areas, prices and specs came from the developer, and every page was proofread before print."
+    "speed": [
+      [
+        "Market research",
+        4,
+        3
+      ],
+      [
+        "Page plan",
+        4,
+        3
+      ],
+      [
+        "Moodboard",
+        3,
+        1.5
+      ],
+      [
+        "Brochure copy",
+        7,
+        5
+      ]
+    ],
+    "rule": "Print is final, so nothing went to the printer unchecked: areas, prices and specs came from the developer, and every page was proofread by hand."
   }
 }
