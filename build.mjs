@@ -8,6 +8,21 @@ const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const OUT = path.join(ROOT, 'dist');
 const cases = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/cases.json'), 'utf8'));
 const diagrams = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/diagrams.json'), 'utf8'));
+const aiData = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/ai.json'), 'utf8'));
+// AI in the process — shared section for every case
+function aiSec(slug) {
+  const A = aiData[slug]; if (!A) return '';
+  const fmt = (d) => d + (d === 1 ? ' day' : ' days');
+  const max = Math.max(...A.speed.map((r) => r[1]));
+  const before = A.speed.reduce((a, r) => a + r[1], 0), after = A.speed.reduce((a, r) => a + r[2], 0);
+  const pct = Math.round((1 - after / before) * 100);
+  const steps = A.steps.map(([t, tools, d], i) => `<li><span class="mono muted">${String(i + 1).padStart(2, '0')}</span><h3>${esc(t)}</h3><p class="muted">${esc(d)}</p><div class="ai-tools">${tools.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div></li>`).join('');
+  const bars = A.speed.map(([t, b, a]) => `<div class="ai-row"><span class="ai-t">${esc(t)}</span><div class="ai-bars"><div class="ai-bar ai-before" style="width:${(b / max) * 100}%"><span class="mono">${fmt(b)}</span></div><div class="ai-bar ai-after" style="width:${(a / max) * 100}%"><span class="mono">${fmt(a)}</span></div></div></div>`).join('');
+  return sec('ai', 'XX — AI IN THE PROCESS', `<p class="big">${esc(A.intro)}</p><ol class="ai-steps">${steps}</ol>
+<div class="ai-speed"><div class="ai-speed-head"><div><p class="eyebrow">Time per stage · before → with AI</p><div class="ai-legend"><span><i class="ai-k ai-before"></i>Usual way</span><span><i class="ai-k ai-after"></i>With AI</span></div></div><div class="ai-total"><b>−${pct}%</b><span class="muted">${before} → ${after} working days</span></div></div>${bars}<p class="mono muted ai-note">Approximate, from my own time on this project.</p></div>
+<blockquote class="hmw ai-rule">${esc(A.rule)}</blockquote>`, 'data-toc="AI"');
+}
+function renumber(out) { let n = 0; return out.map((s) => s.replace(/(<p class="cs-label mono">)(?:\d\d|XX) — /, (m, p) => `${p}${String(++n).padStart(2, '0')} — `)); }
 
 const ORDER = ['harbour', 'strata', 'inner-glow', 'jbc', 'dalitis', 'thallo', 'pcela'];
 const SITE = 'Yaroslava Dzihim';
@@ -387,6 +402,8 @@ function caseStudy(slug, idx) {
   // Mobile (optional)
   const Mo = S['Mobile'];
   if (Mo) out.push(sec('mobile', Mo.label, `<p class="intro">${esc(Mo.intro)}</p><figure class="shot"><figcaption class="pc-label"><span class="mono">#&nbsp; Owner app · phone</span><span class="mono muted">390 × 844</span></figcaption><img src="${Mo.img}" alt="${esc(c.title)} mobile screens" loading="lazy"></figure>`));
+  // AI in the process
+  out.push(aiSec(slug));
   // Measure
   const Me = S['What we measure'];
   const [head, ...rows] = Me.table;
@@ -395,8 +412,9 @@ function caseStudy(slug, idx) {
   const Re = S['Results'];
   out.push(sec('results', Re.label, `<div class="results">${Re.cols.map(([t, d]) => `<div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>`, 'data-toc="Results"'));
 
-  const toc = ['Problem', 'Research', 'Hypotheses', 'Flow', 'Solution', 'Results'];
-  const ids = { Problem: 'problem', Research: 'research', Hypotheses: 'hypotheses', Flow: 'flow', Solution: 'solution', Results: 'results' };
+  out.splice(0, out.length, ...renumber(out.filter(Boolean)));
+  const toc = ['Problem', 'Research', 'Hypotheses', 'Flow', 'Solution', 'AI', 'Results'];
+  const ids = { Problem: 'problem', Research: 'research', Hypotheses: 'hypotheses', Flow: 'flow', Solution: 'solution', AI: 'ai', Results: 'results' };
   return layout({
     page: 'case',
     title: `${c.title} — Case study — ${SITE}`,
@@ -462,6 +480,7 @@ function platon() {
   out.push(sec('spreads', '08 — SPREADS', `<p class="intro">Six spreads from the final print file.</p><div class="spreads">${SP.map(([t, d], i) => `<figure><img src="/img/platon-spread-${i + 1}.jpg" alt="Platon Suites brochure — ${esc(t)}" loading="lazy"><figcaption><span class="mono muted">${String(i + 1).padStart(2, '0')}</span> <b>${esc(t)}</b> <span class="muted">${esc(d)}</span></figcaption></figure>`).join('')}</div>`, 'data-toc="Spreads"'));
   // 09 Print
   out.push(sec('print', '09 — PRINT', `<p class="big">Made for print.</p><div class="chips-row">${['A4 portrait', '36 pages', 'CMYK · FOGRA39', '3 mm bleed + crop marks', 'Laminated cover', 'Perfect bound · 4.5 mm spine'].map((x) => `<span class="chip">${x}</span>`).join('')}</div>`));
+  out.push(aiSec('platon-suites'));
   // 10 Measure
   const MR = [['Location', 'H1', 'Location questions at viewings', 'Fewer'], ['Map', 'H2', 'Map mentioned in feedback', 'Often'], ['Plans', 'H3', 'Follow-ups about areas', 'Fewer'], ['Viewings', 'H4', 'Viewings booked after the brochure', 'More'], ['Sharing', 'H5 · H6', 'Brochures sent as PDF', 'Most leads']];
   const head = ['STAGE', 'BET', 'METRIC', 'TARGET'];
@@ -469,8 +488,9 @@ function platon() {
   // 11 Result
   out.push(sec('result', '11 — RESULT', `<div class="results"><div><h3>Printed and in use</h3><p>A 36-page perfect-bound brochure with a laminated cover, used in sales meetings and viewings.</p></div><div><h3>Also made</h3><p>A screen PDF for agents to send on WhatsApp, and a short video walkthrough of the spreads.</p></div></div>`, 'data-toc="Result"'));
 
-  const toc = ['Brief', 'Research', 'Concept', 'Structure', 'System', 'Spreads', 'Result'];
-  const ids = { Brief: 'brief', Research: 'research', Concept: 'concept', Structure: 'structure', System: 'system', Spreads: 'spreads', Result: 'result' };
+  out.splice(0, out.length, ...renumber(out.filter(Boolean)));
+  const toc = ['Brief', 'Research', 'Concept', 'Structure', 'System', 'Spreads', 'AI', 'Result'];
+  const ids = { AI: 'ai', Brief: 'brief', Research: 'research', Concept: 'concept', Structure: 'structure', System: 'system', Spreads: 'spreads', Result: 'result' };
   return layout({
     page: 'case',
     title: `Platon Suites — Brand & print — ${SITE}`,

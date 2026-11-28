@@ -507,3 +507,27 @@ a,a *,[role="link"],[role="link"] *{cursor:pointer}
 .ty-label{font:400 13px/1 'Poppins',var(--f);letter-spacing:.2em}
 .chips-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 @media (max-width:760px){.brief-kv,.bsys{grid-template-columns:1fr}}
+/* AI in the process */
+.ai-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px;padding:0}
+.ai-steps li{display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line-strong);min-width:0}
+.ai-steps h3{font:500 20px var(--f);letter-spacing:-.01em;margin-top:18px}
+.ai-steps p{font-size:15px;flex:1}
+.ai-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ai-speed{margin-top:56px;border-top:1px solid var(--line);padding-top:28px}
+.ai-speed-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.ai-legend{display:flex;gap:18px;margin-top:12px;font-size:13px}
+.ai-legend span{display:inline-flex;align-items:center;gap:8px}
+.ai-k{display:inline-block;width:12px;height:12px}
+.ai-total{text-align:right;display:flex;flex-direction:column;gap:4px}
+.ai-total b{font:500 56px/1 var(--f);letter-spacing:-.04em;color:var(--accent)}
+.ai-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.ai-t{font-size:15px}
+.ai-bars{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ai-bar{height:22px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;min-width:64px;transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.ai-bar span{font-size:11px;white-space:nowrap}
+.ai-before{background:var(--line)}
+.ai-after{background:var(--accent);color:#fff}
+.ai-note{font-size:11px;margin-top:14px}
+.ai-rule{margin-top:48px}
+@media (max-width:1000px){.ai-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.ai-steps{grid-template-columns:1fr}.ai-row{grid-template-columns:1fr;gap:10px}.ai-total{text-align:left}.ai-total b{font-size:44px}}
