@@ -12,6 +12,7 @@ const aiData = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/ai.json'), '
 // AI in the process — shared section for every case
 function aiSec(slug) {
   const A = aiData[slug]; if (!A) return '';
+  if (A.mini) return sec('ai', 'XX — AI IN THE PROCESS', `<p class="intro">${esc(A.intro)}</p><ul class="ai-mini">${A.items.map(([t, d]) => `<li><h3>${esc(t)}</h3><p class="muted">${esc(d)}</p></li>`).join('')}</ul><div class="ai-tools">${A.tools.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div>`, 'data-toc="AI"');
   const fmt = (d) => d + (d === 1 ? ' day' : ' days');
   const max = Math.max(...A.speed.map((r) => r[1]));
   const before = A.speed.reduce((a, r) => a + r[1], 0), after = A.speed.reduce((a, r) => a + r[2], 0);

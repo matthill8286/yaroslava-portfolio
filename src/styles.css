@@ -531,3 +531,6 @@ a,a *,[role="link"],[role="link"] *{cursor:pointer}
 .ai-rule{margin-top:48px}
 @media (max-width:1000px){.ai-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.ai-steps{grid-template-columns:1fr}.ai-row{grid-template-columns:1fr;gap:10px}.ai-total{text-align:left}.ai-total b{font-size:44px}}
+.ai-mini{list-style:none;padding:0;margin:28px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;border-top:1px solid var(--line);padding-top:24px}
+.ai-mini h3{font:500 18px var(--f);margin-bottom:6px}
+@media (max-width:640px){.ai-mini{grid-template-columns:1fr;gap:20px}}

@@ -175,178 +175,58 @@
     "rule": "In a mental-health app, tone is the product. Every line the coach says was read by a person and checked against what the app can safely say."
   },
   "jbc": {
-    "intro": "JBC sells long, high-value projects. AI helped me understand the audience fast and get the project pages right before design.",
-    "steps": [
+    "mini": true,
+    "intro": "Only a little AI here: mostly for references and a quick look at the market.",
+    "items": [
       [
-        "Research",
-        [
-          "Perplexity",
-          "Claude"
-        ],
-        "Studied how 25+ venue and fit-out firms present their work, and what investors look for before they call."
+        "References",
+        "Collected and sorted references from venue and fit-out studios."
       ],
       [
-        "Structure",
-        [
-          "Claude",
-          "Relume"
-        ],
-        "Drafted the sitemap and the case page outline. I reworked it around proof first: scale, timeline, results."
-      ],
-      [
-        "Prototype",
-        [
-          "Figma Make"
-        ],
-        "A clickable project page in a day, so the client could react to the story before the visuals."
-      ],
-      [
-        "Copy & states",
-        [
-          "Claude"
-        ],
-        "Drafted project summaries from the client's notes, then edited them down to plain, short lines."
+        "Quick research",
+        "Short summaries of how similar firms present large projects."
       ]
     ],
-    "speed": [
+    "tools": [
+      "Perplexity",
+      "Claude"
+    ]
+  },
+  "dalitis": {
+    "mini": true,
+    "intro": "AI played a small part: references to compare, and rough first drafts of the copy.",
+    "items": [
       [
-        "Market research",
-        4,
-        2.5
-      ],
-      [
-        "Sitemap & outline",
-        3,
-        2
-      ],
-      [
-        "First prototype",
-        4,
-        1.5
+        "References",
+        "Gathered developer sites and listing pages to compare."
       ],
       [
         "Copy drafts",
-        4,
-        2.5
+        "First drafts of short listing texts, which I then rewrote."
       ]
     ],
-    "rule": "Investors check the facts, so I did too: every project figure, date and client name came from JBC, not from a prompt."
-  },
-  "dalitis": {
-    "intro": "Dalitis has three audiences and many listings. AI helped me sort the audience, structure the listings and write clear copy.",
-    "steps": [
-      [
-        "Research",
-        [
-          "Perplexity",
-          "Claude"
-        ],
-        "Compared 20+ Cyprus developer sites and grouped what homebuyers, investors and businesses each look for first."
-      ],
-      [
-        "Structure",
-        [
-          "Claude",
-          "Relume"
-        ],
-        "Drafted the sitemap and listing filters. I tested them against the real portfolio and merged what overlapped."
-      ],
-      [
-        "Prototype",
-        [
-          "Figma Make"
-        ],
-        "A clickable listings and project page in a day, reviewed with the sales team."
-      ],
-      [
-        "Copy & content",
-        [
-          "Claude"
-        ],
-        "Turned long project notes into short listing descriptions in one tone, then edited them by hand."
-      ]
-    ],
-    "speed": [
-      [
-        "Market research",
-        4,
-        2
-      ],
-      [
-        "Sitemap & filters",
-        3,
-        2
-      ],
-      [
-        "First prototype",
-        4,
-        1.5
-      ],
-      [
-        "Listing copy",
-        6,
-        2.5
-      ]
-    ],
-    "rule": "Prices, sizes and availability come straight from the client’s data. AI helped me write about the homes, never decide what they cost."
+    "tools": [
+      "Perplexity",
+      "Claude"
+    ]
   },
   "thallo": {
-    "intro": "Thallo was not built yet, so the site had to sell a picture. AI helped me research tenants and show the space before it existed.",
-    "steps": [
+    "mini": true,
+    "intro": "Used lightly, at the start: references, and a few images to find the mood.",
+    "items": [
       [
-        "Research",
-        [
-          "Perplexity",
-          "Claude"
-        ],
-        "Looked at how office buildings in Limassol and abroad are let, and what companies ask before a viewing."
+        "References",
+        "Collected office-letting sites and floor-plan patterns."
       ],
       [
-        "Structure",
-        [
-          "Claude"
-        ],
-        "Drafted the page story: location, floors, specs, contact. I reordered it around the questions tenants ask first."
-      ],
-      [
-        "Prototype",
-        [
-          "Figma Make"
-        ],
-        "A clickable floor-picker in a day, so the agents could try it before the final design."
-      ],
-      [
-        "Visuals & copy",
-        [
-          "Midjourney",
-          "Claude"
-        ],
-        "Mood images for the lobby and terraces to set the direction, plus short spec copy. Final images came from the architect's renders."
+        "Mood images",
+        "A few images to set the mood. The site uses the architect’s renders."
       ]
     ],
-    "speed": [
-      [
-        "Market research",
-        4,
-        3
-      ],
-      [
-        "Page story",
-        3,
-        2
-      ],
-      [
-        "First prototype",
-        4,
-        2
-      ],
-      [
-        "Mood visuals & copy",
-        5,
-        3.5
-      ]
-    ],
-    "rule": "AI images showed the mood, not the building. On the live site every view is the architect’s real render or plan."
+    "tools": [
+      "Perplexity",
+      "Midjourney"
+    ]
   },
   "pcela": {
     "intro": "Pcela is about speed for the buyer, so I used AI to move fast too: research, checkout flow and product copy.",
