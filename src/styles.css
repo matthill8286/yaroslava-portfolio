@@ -463,7 +463,9 @@ a.pc:hover .pc-img img{transform:scale(1.04)}
 /* no text selection on the site (contacts stay selectable) */
 body{-webkit-user-select:none;user-select:none}
 .contact-grid,.facts,.copy span:first-child,.menu-mail{-webkit-user-select:text;user-select:text}
-h1,h2,h3,.sel,.case-head,.next-case{cursor:default}
+h1,h2,h3,.sel,.case-head{cursor:default}
+/* anything clickable shows the hand, including headings inside cards and the next-case link */
+a,a *,[role="link"],[role="link"] *{cursor:pointer}
 
 .flow-img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line)}
 .flow-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
